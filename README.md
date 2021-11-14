@@ -23,6 +23,7 @@ Peale tellimuse eest maksmist:
 
 - [React]
 - [Node]
+- [PostgreSQL]
 
 
 ## Installimine
@@ -33,4 +34,5 @@ tba
 
    [React]: https://reactjs.org/
    [Node]: https://nodejs.org/en/
+   [PostgreSQL]: https://www.postgresql.org/
 

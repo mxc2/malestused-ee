@@ -19,6 +19,8 @@ Peale tellimuse eest maksmist:
 - Gridide vahel olevat white spacei saab teha suuremaks ja väiksemaks kliendi poolt
 - Kollaaži saab ka laadida pilte üles Facebookist vms. sotsiaalmeedia platvormilt
 
+[Low-fidelity wireframe](https://www.figma.com/file/OHouuoMTYwYbEexM1DOitf/Untitled?node-id=0%3A1)
+
 ## Tech
 
 - [React]

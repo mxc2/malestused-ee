@@ -24,7 +24,7 @@ Peale tellimuse eest maksmist:
 ## Tech
 
 - [React]
-- [Node]
+- Java
 - [PostgreSQL]
 
 
@@ -35,6 +35,5 @@ tba
 ```
 
    [React]: https://reactjs.org/
-   [Node]: https://nodejs.org/en/
    [PostgreSQL]: https://www.postgresql.org/
 

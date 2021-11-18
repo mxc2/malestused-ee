@@ -1,0 +1,73 @@
+.products-container{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#header{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+#description{
+    text-align: center;
+    margin-top: 0px;
+}
+
+#collage-image{
+    height: 250px;
+    width: auto;
+    cursor: pointer;
+}
+
+#collage-image-active{
+    height: 250px;
+    width: auto;
+    cursor: pointer;
+    border: rgb(0, 243, 0);
+    border-style: solid;
+    border-width: medium;
+    box-sizing: border-box;
+}
+
+.center-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TEMP{
+    margin-top: 300px;
+}
+
+#button{
+  padding: 16px 64px;
+  margin-right: 16px;
+  margin-left: 16px;
+  text-decoration: none;
+  font-size: 32px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+}
+
+.grid{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+  
+/* Card where all the product attributes are located at product list */
+.card {
+    width: auto;
+    height: auto;  
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    padding: 25px 15px 50px;
+    font-size: 15px;
+    transition: 0.3s;
+}

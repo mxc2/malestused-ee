@@ -17,26 +17,39 @@
     height: 250px;
     width: auto;
     cursor: pointer;
+    border: white;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
 }
 
 #collage-image-active{
     height: 250px;
     width: auto;
     cursor: pointer;
-    border: rgb(0, 243, 0);
+    border: #7349e6;
     border-style: solid;
-    border-width: medium;
+    border-width: 6px;
     box-sizing: border-box;
 }
 
-.center-button{
-    display: flex;
+#collage-image:hover{
+    border: #7349e6;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
+}
+
+#center-button{
+    display: none;
     align-items: center;
     justify-content: center;
 }
 
-.TEMP{
-    margin-top: 300px;
+#TEMP{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #button{
@@ -51,6 +64,11 @@
   color: black; 
   border: 2px solid black;
 }
+
+#button:hover{
+    background-color:black;
+    color: white
+  }
 
 .grid{
     margin-left: 100px;

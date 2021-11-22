@@ -10,6 +10,7 @@ function CollageList(props) {
       title={collage.title}
       price={collage.price}
       id={collage.id}
+      test={collage.test}
       funcSelect={props.funcSelect}/>
     ))}
   </div>); 

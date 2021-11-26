@@ -1,12 +1,10 @@
 import "../../pages/CollagesCatalog.css"
 
-function Collages(props, selectedCollage){
+function Collages(props){
 
     var CollageStyle = "";
 
-    console.log(selectedCollage);
-
-    if(props.id === selectedCollage){
+    if(props.id === props.test){
         CollageStyle = "collage-image-active";
     }else{
         CollageStyle = "collage-image";

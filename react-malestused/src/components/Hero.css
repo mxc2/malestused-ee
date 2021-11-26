@@ -21,6 +21,21 @@
     color: white;
 }
 
+#hero-product{
+    float: right;
+    height: 550px;
+    width: auto;
+    margin-top: 84px;
+    margin-right: 1024px;
+    animation-name: hero-product-slide;
+    animation-duration: 2s; 
+}
+
+@keyframes hero-product-slide {
+    0%   {transform: translate(2000px)}
+    100% {transform: translate(0px)}
+}
+
 #h1{
     font-size: 50px;
     text-shadow: 2px 2px 4px #000000;

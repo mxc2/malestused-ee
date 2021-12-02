@@ -24,8 +24,8 @@ Peale tellimuse eest maksmist:
 ## Tech
 
 - [React]
-- Java
-- [PostgreSQL]
+- [Node]
+- [MongoDB]
 
 
 ## Installimine
@@ -35,5 +35,6 @@ tba
 ```
 
    [React]: https://reactjs.org/
-   [PostgreSQL]: https://www.postgresql.org/
+   [Node]: https://nodejs.org/en/
+   [PostgreSQL]: https://www.mongodb.com/
 

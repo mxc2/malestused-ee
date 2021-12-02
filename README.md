@@ -36,5 +36,5 @@ tba
 
    [React]: https://reactjs.org/
    [Node]: https://nodejs.org/en/
-   [PostgreSQL]: https://www.mongodb.com/
+   [MongoDB]: https://www.mongodb.com/
 

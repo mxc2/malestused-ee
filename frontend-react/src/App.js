@@ -7,12 +7,15 @@ import Footer from './components/Footer'
 import History from './components/History'
 import Order from './pages/Order'
 import Registration from './components/Registration'
+import { useState } from 'react'
+import Login from './components/Login'
 
 function App() {
+  const [user, setUser] = useState();
   return (
     <Router history={History}>
+      <Header user={user} />
       <div className="body">
-        <Header/>
         <div className="footer-position">
           <Route path="/" exact>
             <Home />
@@ -23,8 +26,9 @@ function App() {
           <Route path="/tellimus">
             <Order/>
           </Route>
-          <Route path="/register">
-            <Registration />
+          <Route exact path="/register" component={Registration} />
+          <Route exact path="/login">
+            <Login setUser={setUser} />
           </Route>
         </div>
         <Footer />

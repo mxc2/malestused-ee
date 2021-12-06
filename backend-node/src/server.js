@@ -4,10 +4,12 @@ const PORT = process.env.PORT || 3000
 var cors = require('cors');
 const jwtAuth = require("./middleware/jwtAuth")
 require("dotenv").config()
+// const postCharge = require('./stripe')
 
 const authRoutes = require('./routes/auth');
 
 const app = express()
+
 app.use(cors())
 app.use(express.json());
 

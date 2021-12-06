@@ -5,7 +5,7 @@ import Cross from "../images/icons/cross.svg"
 import History from "./History"
 //import Account from "../images/icons/account.svg"
 
-function Navbar(){
+function Navbar(props){
 
     //CART
     function CartToggleOn(){
@@ -34,6 +34,7 @@ function Navbar(){
 
     return(
         <div>
+            
             <div className="header">
                 <Link to="/">
                     <img onClick={CartToggleOff} id="logo" src={Logo} alt="Logo" />
@@ -51,8 +52,13 @@ function Navbar(){
                     <a onClick={CartToggleOn}>Ostukorv</a>
 
                     <Link to="/register">
-                        <a onClick={CartToggleOff}>Konto</a>
-                    </Link>
+                        <a onClick={CartToggleOff}>Register</a>
+                    </Link>                                      
+                    {/* //Ilmselt peaks, logini voi registeri kohugi mujale panema, et müra veits vähemaks headeris  */}
+                    {props.user ?
+                    <Link to="/login"><a onClick={CartToggleOff}>{props.user.firstName} </a></Link>:
+                    <Link to="/login"><a onClick={CartToggleOff}>Log in</a></Link>
+                    }
                     
                 </div>
                 

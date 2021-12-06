@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import "../App.css"
+import { getOverflowOptions } from "antd/lib/tooltip/placements";
 
 function Registration(){
   const [email, setEmail] = useState();
@@ -36,6 +37,7 @@ function Registration(){
           setError(registered.error)
         }else if(registered.message){
           setError("User registered!")
+          
         } else {
           setError(registered.msg['0'].msg)
         }

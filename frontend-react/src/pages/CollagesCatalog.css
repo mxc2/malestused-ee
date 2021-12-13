@@ -1,0 +1,100 @@
+.products-container{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#header{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+#header-line{
+    margin-bottom: 0px;
+}
+
+#description{
+    text-align: center;
+    margin-top: 0px;
+}
+
+#collage-image{
+    height: 250px;
+    width: auto;
+    cursor: pointer;
+    border: white;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
+}
+
+#collage-image-active{
+    height: 250px;
+    width: auto;
+    cursor: pointer;
+    border: #7349e6;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
+}
+
+#collage-image:hover{
+    border: #7349e6;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
+}
+
+#center-button{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#TEMP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button{
+  padding: 16px 64px;
+  margin-right: 16px;
+  margin-left: 16px;
+  text-decoration: none;
+  font-size: 32px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+}
+
+#button:hover{
+    background-color:black;
+    color: white
+  }
+
+.grid{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+  
+/* Card where all the product attributes are located at product list */
+.card {
+    width: auto;
+    height: auto;  
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    padding: 25px 15px 50px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.back-button{
+    margin-left: 5%;
+    margin-top: 100px;
+}

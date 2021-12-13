@@ -1,0 +1,60 @@
+.content{
+    position:relative;
+}
+
+.hero-image{
+    background-image: url("../Avabackg.png");
+    height: 750px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.hero-text{
+    text-align: left;
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    color: white;
+}
+
+#hero-product{
+    float: right;
+    height: 550px;
+    width: auto;
+    margin-top: 84px;
+    margin-right: 25%;
+    animation-name: hero-product-slide;
+    animation-duration: 2s; 
+}
+
+@keyframes hero-product-slide {
+    0%   {transform: translate(2000px)}
+    100% {transform: translate(0px)}
+}
+
+#h1{
+    font-size: 50px;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#btn{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 8px 48px;
+    cursor: pointer;
+    border-radius: none;
+    font-size: larger;
+    font-weight: 500;
+}
+
+#btn:hover{
+    color:rgb(255, 255, 255);
+    background-color:rgb(43, 43, 43);
+}

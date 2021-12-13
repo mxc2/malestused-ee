@@ -1,0 +1,163 @@
+#logo{
+    float: left;
+    margin-bottom: 0px;
+    align-items: center;
+    margin-top: 7px;
+}
+
+a{
+    margin-right: 12px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 600;
+}
+
+.header-buttons{
+    float: right;
+    margin-top: 14px;
+}
+
+.header {
+    padding-top: 25px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Shopping cart */
+#cart-overlay {
+    position: fixed;
+    display: block;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f2024f8;
+    z-index: 2;
+    transition: width 0.4s;
+}
+
+#cart-header{
+    float: left;
+    margin-left: 35px;
+    margin-top: 32px;
+    color: white;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+#exit-cart{
+    float: right;
+    margin-right: -635px;
+    margin-top: 35px;
+    width: 30px;
+    height: auto;
+    color: white;
+    cursor: pointer;
+    transition: margin-right 0.4s;
+}
+
+.cart-underline{
+    margin-top: 82px;
+    margin-bottom: 0px;
+
+    border: 1px solid white;
+}
+
+
+#cart-item{
+    height: 80vh;
+    overflow-y: auto;
+    box-shadow: inset 12px 0 10px -4px rgba(0, 0, 0, 0.644), inset -12px 0 10px -4px rgba(0, 0, 0, 0.644), inset 0px 12px 10px -4px rgba(0, 0, 0, 0.644), inset 0px -12px 10px -4px rgba(0, 0, 0, 0.644);
+}
+
+.cart-empty{
+    color: rgb(214, 214, 214);
+    text-align: center;
+    margin-top: 100%;
+    font-size: 20px;
+    padding: 0px 20px 20px 20px;
+    cursor: pointer;
+}
+
+#bottom-button{
+    display: block;
+    margin-top: 10%;
+    padding: 16px 58px;
+    margin-right: 50%;
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 22px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+#bottom-button:hover{
+    color: white;
+    background-color: #9cc069;
+}
+
+/* Unused */
+#account-button{
+    width: auto;
+    height: 32px;
+    margin-top: 12px;
+    float: right;
+}
+
+#account-overlay-background{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #1f2024f8;
+}
+
+#account-overlay{
+    position: fixed;
+    width: 25%;
+    height: 40%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.74);
+    margin: auto;
+    border-radius: 25px;
+}
+
+#account-header{
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    margin-top: 18px;
+    font-weight: 400;
+}
+
+.row{
+    margin-left: 32px;
+    margin-top: 32px;
+}
+
+#account-label{
+    margin-right: 12px;
+    font-size: 32px;
+}
+
+#exit-account{
+    width: 30px;
+    height: auto;
+}

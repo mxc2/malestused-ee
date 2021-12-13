@@ -1,0 +1,14 @@
+body{ height:100vh; margin:0; }
+
+body { 
+  margin: 0;
+  display:flex; 
+  flex-direction:column; 
+  overflow-x: hidden;
+}
+
+/* Give a minimum height to body, so we can push the footer to the bottom */
+.footer-position{
+  position: relative;
+  min-height: 80vh;
+}

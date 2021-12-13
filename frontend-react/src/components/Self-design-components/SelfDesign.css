@@ -1,0 +1,155 @@
+.self-design{
+    display: block;
+}
+
+.left{
+    float: left;
+}
+
+.vertical-line{
+    border-left: 1px solid gray;
+    height: 500px;
+    float: right;
+}
+
+.right{
+    float: right;
+    width: 20%;
+    padding-bottom: 20px;
+    border-style: solid;
+}
+
+/* Drop Down Design */
+#dropdown{
+    display: flex;
+    margin-left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: relative;
+    width: 50%;
+    min-height: 30px;
+    color: black;
+    font-weight: 300;
+    background-color: white;
+    box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.3);
+    transition: all 375ms ease-in-out;
+}
+
+/* New Button Design */
+.new-button{
+    margin-left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: white; /* Green */
+    border: 2px solid black;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#new-button:hover{
+    background-color: black;
+    color: white;
+}
+
+.collage-frames{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#left-button{
+    float: left;
+    margin: 0 auto;
+}
+
+#right-button{
+    float: right;
+    margin: 0 auto;
+}
+
+.frame-button{
+    background-color: white; /* Green */
+    border: 2px solid black;
+    color: black;
+    padding: 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 125px;
+}
+
+.frame-button:hover{
+    color: white;
+    background-color: black;
+}
+
+.summary{
+    text-align: center;
+}
+
+#price{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#price-underline{
+    width: 30%;
+    height: 2px;
+    color: black;
+}
+
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: solid 2px;
+    border-color: black
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.center-buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

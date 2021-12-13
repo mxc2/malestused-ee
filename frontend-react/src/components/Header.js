@@ -26,9 +26,7 @@ function Navbar(props){
             const Item = "Product" + i;
             const output = JSON.parse(localStorage.getItem(Item));
 
-            if(output === null){
-                i = 20; //End FOR
-            }else{
+            if(output !== null){
                 products.push(output);
             }
         }
@@ -48,7 +46,6 @@ function Navbar(props){
         if (document.getElementById('bottom-button') ){
             document.getElementById('bottom-button').style.marginRight = "50%";
         }
-
     }
 
     function CartToggleOff(){
@@ -119,12 +116,13 @@ function Navbar(props){
                 <img id="exit-cart" src={Cross} alt="Lahkuge ostukorvist" onClick={CartToggleOff}></img>
                 <hr class="cart-underline" />
 
+
                 {!test && 
-                
-                <div onClick={RedirectToCollagesCatalog} className="cart-empty">
-                    <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
-                    <p>Ei tea kust kollaaže leida? Vajuta siia</p>
-                </div>
+
+                  <div onClick={RedirectToCollagesCatalog} className="cart-empty">
+                      <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
+                      <p>Ei tea kust kollaaže leida? Vajuta siia</p>
+                  </div>
                 }
 
                 {test && 

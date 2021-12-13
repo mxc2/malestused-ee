@@ -4,7 +4,7 @@ function InfoList(props) {
 
   return(<div>
     {props.infos.map(info=> (
-     <Info 
+      <Info 
       header={info.header}
       text={info.text}
       img={info.img}

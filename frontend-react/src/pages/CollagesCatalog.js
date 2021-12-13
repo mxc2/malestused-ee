@@ -38,6 +38,8 @@ function CollagesCatalog(){
     function funcContinue(){
         if(selectedProduct){
             setContinue(true);
+        }else{
+            console.log("Please add code to if not selected");
         }
     }
 

@@ -15,8 +15,8 @@ function App() {
   const [user, setUser] = useState();
   return (
     <Router history={History}>
+      <Header user={user} />
       <div className="body">
-        <Header/>
         <div className="footer-position">
           <Route path="/" exact>
             <Home />

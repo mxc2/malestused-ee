@@ -8,6 +8,10 @@
     margin-bottom: 4px;
 }
 
+#header-line{
+    margin-bottom: 0px;
+}
+
 #description{
     text-align: center;
     margin-top: 0px;
@@ -48,8 +52,8 @@
 
 #TEMP{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 #button{
@@ -88,4 +92,9 @@
     padding: 25px 15px 50px;
     font-size: 15px;
     transition: 0.3s;
+}
+
+.back-button{
+    margin-left: 5%;
+    margin-top: 100px;
 }

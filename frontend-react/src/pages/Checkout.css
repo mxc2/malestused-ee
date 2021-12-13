@@ -1,0 +1,51 @@
+.checkout{
+  width: 90%;
+  align-items: center;
+  margin: auto;
+}
+
+.left-checkout{
+  float: left;
+  width: 50%
+}
+
+.right-checkout{
+  float: right;
+  width: 50%
+}
+
+.checkout-back{
+    width: 70%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 24px;
+    border-style: solid;
+    display: flex;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#checkout-picture-box{
+  width: 25%;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+#delete-button-checkout{
+  width: 34px;
+  float: right;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+#delete-button-checkout:hover{
+  cursor: pointer;
+  filter: invert(52%) sepia(28%) saturate(0%) hue-rotate(141deg) brightness(90%) contrast(92%);
+}

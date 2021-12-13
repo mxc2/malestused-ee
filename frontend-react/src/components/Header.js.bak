@@ -8,7 +8,7 @@ import CartItems from "./CartItems"
 import { useState, useReducer } from "react";
 //import Account from "../images/icons/account.svg"
 
-function Navbar(props){
+function Navbar(){
 
     const [products, setProducts] = useState([]);
     const [test, setTest] = useState(false);
@@ -26,7 +26,9 @@ function Navbar(props){
             const Item = "Product" + i;
             const output = JSON.parse(localStorage.getItem(Item));
 
-            if(output !== null){
+            if(output === null){
+                i = 20; //End FOR
+            }else{
                 products.push(output);
             }
         }
@@ -46,6 +48,7 @@ function Navbar(props){
         if (document.getElementById('bottom-button') ){
             document.getElementById('bottom-button').style.marginRight = "50%";
         }
+
     }
 
     function CartToggleOff(){
@@ -96,15 +99,6 @@ function Navbar(props){
                     <a onClick={CartToggleOn}>Ostukorv</a>
 
                     <a onClick={AccountToggleOn}>Konto</a>
-					
-					<Link to="/register">
-                        <a onClick={CartToggleOff}>Register</a>
-                    </Link>                                      
-                    {/* //Ilmselt peaks, logini voi registeri kohugi mujale panema, et müra veits vähemaks headeris  */}
-                    {props.user ?
-                    <Link to="/login"><a onClick={CartToggleOff}>{props.user.firstName} </a></Link>:
-                    <Link to="/login"><a onClick={CartToggleOff}>Log in</a></Link>
-                    }
                     
                 </div>
                 
@@ -116,13 +110,12 @@ function Navbar(props){
                 <img id="exit-cart" src={Cross} alt="Lahkuge ostukorvist" onClick={CartToggleOff}></img>
                 <hr class="cart-underline" />
 
-
                 {!test && 
-
-                  <div onClick={RedirectToCollagesCatalog} className="cart-empty">
-                      <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
-                      <p>Ei tea kust kollaaže leida? Vajuta siia</p>
-                  </div>
+                
+                <div onClick={RedirectToCollagesCatalog} className="cart-empty">
+                    <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
+                    <p>Ei tea kust kollaaže leida? Vajuta siia</p>
+                </div>
                 }
 
                 {test && 

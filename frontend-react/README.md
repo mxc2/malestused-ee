@@ -1,3 +1,15 @@
+NB. Meil on praegu Margeniga mingi probleem, kus kui proovime uue node_modulesi teha, siis see breakib lehe. Annab errori et peame installime dependancie, teeme selle ära ja siis ikka veel näitab et tegematta.
+
+Vajalikud dependancied:
+
+Fade in: npm i react-fade-in
+
+Võibolla vajalik, oleneb kui annab errori:
+
+History: npm i history
+
+------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

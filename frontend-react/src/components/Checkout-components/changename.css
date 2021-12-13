@@ -1,0 +1,50 @@
+.user-details{
+    float: left;
+}
+
+input[type=text], select, textarea {
+    width: 80%;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-shadow: inline 2px 2px black;
+}
+
+input[type=text]:hover{
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+  }
+  input[type=text]:focus {
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+    outline-width: 0px;
+  }
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.col-25 {
+    float: left;
+    width: 35%;
+    margin-top: 6px;
+}
+  
+.col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+}
+
+.row-input{
+    margin-top: 10px;
+}
+
+/* Clear floats after the columns */
+.row-input:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Credit: https://www.w3schools.com/howto/howto_css_responsive_form.asp */

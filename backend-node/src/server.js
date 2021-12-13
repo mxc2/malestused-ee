@@ -8,7 +8,6 @@ require("dotenv").config()
 // const postCharge = require('./stripe')
 
 
-
 const imageRoutes = require('./routes/image.route')
 const authRoutes = require('./routes/auth');
 

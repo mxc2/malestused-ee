@@ -9,6 +9,7 @@ import Order from './pages/Order'
 import Registration from './components/Registration'
 import { useState } from 'react'
 import Login from './components/Login'
+import Testingupload from './components/testingupload'
 
 function App() {
   const [user, setUser] = useState();
@@ -29,6 +30,9 @@ function App() {
           <Route exact path="/register" component={Registration} />
           <Route exact path="/login">
             <Login setUser={setUser} />
+          </Route>
+          <Route path="/test">
+            <Testingupload/>
           </Route>
         </div>
         <Footer />

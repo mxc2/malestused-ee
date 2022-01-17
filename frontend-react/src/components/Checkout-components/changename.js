@@ -14,26 +14,26 @@ function changename(){
             </div>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="first-name">Perekonna nimi:</label>
+                    <label for="last-name">Perekonna nimi:</label>
                 </div>
                 <div className="col-75">
-                    <input  type="text" id="first-name"></input>
+                    <input  type="text" id="last-name"></input>
                 </div>
             </div>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="first-name">Email:</label>
+                    <label for="email">Email:</label>
                 </div>
                 <div className="col-75">
-                    <input  type="text" id="first-name"></input>
+                    <input  type="text" id="email"></input>
                 </div>
             </div>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="first-name">Telefon:</label>
+                    <label for="phone">Telefon:</label>
                 </div>
                 <div className="col-75">
-                    <input  type="text" id="first-name"></input>
+                    <input  type="text" id="phone"></input>
                 </div>
             </div>
         </div>

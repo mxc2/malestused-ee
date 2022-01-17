@@ -1,0 +1,15 @@
+.shipping-location{
+    float: right;
+    width: 50%
+}
+
+#transport-company-image{
+    width: 84px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+#transport-company-image:active{
+    border: 1px solid purple;
+}

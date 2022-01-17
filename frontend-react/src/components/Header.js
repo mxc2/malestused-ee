@@ -4,6 +4,7 @@ import Logo from "../LogoTest.PNG"
 import Cross from "../images/icons/cross.svg"
 import History from "./History"
 import CartItems from "./CartItems"
+import Login from "./Login"
 
 import { useState, useReducer } from "react";
 //import Account from "../images/icons/account.svg"
@@ -145,6 +146,9 @@ function Navbar(props){
                     <div id="account-header">Sisse logimine</div>
                     
                     <img id="exit-account" src={Cross} alt="Lahkuge" onClick={AccountToggleOff}></img>
+
+                    <Login />
+
                     {/*}
                     <div className="row">
                         <label for="email" id="account-label">Email</label>

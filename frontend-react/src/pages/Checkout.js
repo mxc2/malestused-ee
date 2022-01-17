@@ -2,6 +2,7 @@ import "./Checkout.css"
 import React, { useEffect, useState } from "react";
 import CartItems from "../components/CartItems";
 import Changename from "../components/Checkout-components/changename";
+import ShippingLocation from "../components/Checkout-components/ShippingLocation";
 
 function Checkout(){
 
@@ -44,13 +45,16 @@ function Checkout(){
         <div>
             <hr />
 
-            <div className="left-checkout">
+
+            <div>
                 <h2 style={{textAlign: "center"}}>Ostukorv:</h2>
                 <CartItems items={products}/>
             </div>
 
-            <div className="right-checkout">
+
+            <div style={{marginTop: "16px", width: "55%", margin: "auto", maxWidth: "1320px"}}>
                 <Changename />
+                <ShippingLocation />
             </div>
         </div>
     );

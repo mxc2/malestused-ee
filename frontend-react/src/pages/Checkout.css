@@ -49,3 +49,15 @@
   cursor: pointer;
   filter: invert(52%) sepia(28%) saturate(0%) hue-rotate(141deg) brightness(90%) contrast(92%);
 }
+
+.checkout-table{
+  width: 75%;
+  max-width: 1420px;
+  margin: auto;
+  text-align: left;
+}
+
+td, th {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 8px;
+}

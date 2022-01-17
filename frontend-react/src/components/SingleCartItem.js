@@ -3,7 +3,7 @@ import "./Cart.css";
 import "../pages/Checkout.css"
 import TrashIcon from "../images/icons/remove-cross.svg";
 import TrashIconBlack from "../images/icons/remove-cross-black.svg";
-import HeartInMiddleCollage from "../images/BlackFrameBackground.png";
+import HeartInMiddleCollage from "../images/with-background/BlackFrameBackground.png";
 import ClassicCollageBlackFrame from "../images/ClassicPhotoWIthBac.png";
 import HeartShapedCollage from "../images/LivingRoomPicGold.png";
 import {useState, useReducer} from "react";
@@ -46,20 +46,28 @@ function SingleCartItem(props){
         
         for (var i = 0; i < 20; i++) {
             const Item = "Product" + i;
-            const output = JSON.parse(localStorage.getItem(Item));
-            
-            /* @ts-ignore */
-            if(output.ID === props.ID){
-                localStorage.removeItem(Item);
+            try {
+                const output = JSON.parse(localStorage.getItem(Item));
+
+                if(output.ID === props.ID){
+                    localStorage.removeItem(Item);
+                    forceUpdate();
+                    break;
+                }
                 
             }
+            catch(err){}         
         }
+    }
+
+    function DeleteItem(){
+        console.log(props);
     }
 
     //How does this work?
     //From props.dataFrom we get information about where the data is coming from.
     //If props.dataFrom === Checkout, then display SingleCartItem as a table.
-    //I0rom, then display SingleCartItem as cards in the cart.
+    //If not, then display SingleCartItem as cards in the cart.
 
     return(
         <div>
@@ -97,23 +105,24 @@ function SingleCartItem(props){
             {/* After this we are using Checkout.css */}
 
             {props.dataFrom &&
-                <div className="checkout-back">
-
-                <img id="checkout-picture-box" src={collagePicture} alt="Kollaažist pilt"></img>
-
-
-                <div className="details">
-                    <h2 id="cart-title">{props.title}</h2>
-                    <div>
-                        <p id="cart-size">Suurus: {props.size}</p>
-                        <p>Raam: {frame}</p>
-                        <h3>{props.summary}€</h3>
-                    </div>
-                </div>
-
-                <img id="delete-button-checkout" src={TrashIconBlack} alt="Eemaldage ostukorvist" onClick={DeletetionPrompt}></img>
-
-                </div>
+            <table className="checkout-table">
+                <tr>
+                    <th>Pilt</th>
+                    <th>Nimi</th>
+                    <th>Suurus</th>
+                    <th>Raam</th>
+                    <th>Hind</th>
+                    <th>Valikud:</th>
+                </tr>
+                <tr>
+                    <td style={{width: "10%"}}><img style={{width: "100%"}} src={collagePicture}></img></td>
+                    <td style={{maxWidth: "64px"}}>{props.title}</td>
+                    <td>{props.size}</td>
+                    <td>{frame}</td>
+                    <td>{props.summary}€</td>
+                    <td style={{width: "20px"}}><a onClick={DeleteCartItem}>Eemalda</a></td>
+                </tr>
+              </table>
             }
         </div>
     )

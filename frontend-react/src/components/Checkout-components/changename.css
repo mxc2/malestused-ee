@@ -1,5 +1,7 @@
-.user-details{
+.user-details{ 
     float: left;
+    margin: auto;
+    width: 40%;
 }
 
 input[type=text], select, textarea {

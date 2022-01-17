@@ -1,9 +1,20 @@
 import "./SelfDesign.css";
 import React, { Component } from 'react';
 import History from "../History";
-
+import TestImage from "../../images/Collages-catalog/BlackPicFrameWithHeartMiddle (1).png"
+import GridLayout from "react-grid-layout";
+import _ from "lodash";
+import ReactGridLayout from "react-grid-layout";
 
 class Selfdesign extends Component{
+
+    static defaultProps = {
+        className: "layout",
+        items: 20,
+        rowHeight: 30,
+        onLayoutChange: function() {},
+        cols: 12
+      };
 
     constructor(props) {
         super(props);
@@ -16,6 +27,9 @@ class Selfdesign extends Component{
             frame: 0,
             summary: "",
         }
+
+        const layout = this.generateLayout();
+        //this.state = { layout };
     }
 
     //Generate random id for collage when page loads
@@ -83,7 +97,37 @@ class Selfdesign extends Component{
         }
       };
 
+    generateLayout() {
+        const p = this.props;
+        return _.map(new Array(p.items), function(item, i) {
+          const y = _.result(p, "y") || Math.ceil(Math.random() * 4) + 1;
+          return {
+            x: (i * 2) % 12,
+            y: Math.floor(i / 6) * y,
+            w: 2,
+            h: y,
+            i: i.toString()
+          };
+        });
+      }
+
+      generateDOM() {
+        return _.map(_.range(this.props.items), function(i) {
+          return (
+            <div key={i}>
+              <span className="text">{i}</span>
+            </div>
+          );
+        });
+      }
+    
     render(){
+
+        const layout = [
+            { i: "a", x: 0, y: 0, w: 1, h: 2 },
+            { i: "b", x: 1, y: 0, w: 3, h: 2 },
+            { i: "c", x: 4, y: 0, w: 1, h: 2 }
+          ];
 
         //Calculate the collage size and frame together. Why is this unde render()? Because we need to rerender it quickly
         this.state.summary = this.state.frame + this.props.SelfDesignSelectedCollage.price;
@@ -91,7 +135,14 @@ class Selfdesign extends Component{
         return(
         <div className="self-design">
             <div className="left">
-                Hey
+                <ReactGridLayout
+                    layout={this.generateLayout}
+                    onLayoutChange={this.onLayoutChange}
+                    isBounded={true}
+                    {...this.props}
+                >
+                    {this.generateDOM}
+                </ReactGridLayout>
             </div> 
 
             <div className="right">

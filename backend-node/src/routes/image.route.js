@@ -1,4 +1,4 @@
-//https://remotestack.io/react-axios-upload-multiple-image-files-with-node/
+//
 
 let express = require('express');
 let mongoose = require('mongoose');

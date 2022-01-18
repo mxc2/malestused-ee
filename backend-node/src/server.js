@@ -9,7 +9,8 @@ require("dotenv").config()
 
 
 const imageRoutes = require('./routes/image.route')
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth')
+const orderRoutes = require('./routes/collageOrder.route')
 
 const app = express()
 app.use(bodyParser.json());
@@ -20,9 +21,14 @@ app.use(cors())
 
 app.use(express.json());
 
+
+
 app.use('/public', express.static('public'));
 
 app.use('/endpoint', imageRoutes)
+
+app.use('/api/order', orderRoutes);
+
 
 app.use('/api/auth', authRoutes);
 
@@ -43,6 +49,7 @@ app.use((req, res, next) => {
       next(new Error('Error occured'));
   });
 });
+
 
 mongoose.Promise = global.Promise
 mongoose

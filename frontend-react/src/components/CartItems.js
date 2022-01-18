@@ -10,7 +10,7 @@ function CartItems(props) {
       ID={product.ID}
       selectedCollageID={product.selectedCollageID}
       title={product.title}
-      size={product.value}
+      size={product.Selectvalue}
       price={product.price}
       frame={product.frame}
       summary={product.summary}

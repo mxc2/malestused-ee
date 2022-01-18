@@ -4,14 +4,11 @@ import "../pages/Checkout.css"
 import TrashIcon from "../images/icons/remove-cross.svg";
 import TrashIconBlack from "../images/icons/remove-cross-black.svg";
 import HeartInMiddleCollage from "../images/with-background/BlackFrameBackground.png";
-import ClassicCollageBlackFrame from "../images/ClassicPhotoWIthBac.png";
-import HeartShapedCollage from "../images/LivingRoomPicGold.png";
+import ClassicCollageBlackFrame from "../images/with-background/ClassicPhotoWIthBac.png";
+import HeartShapedCollage from "../images/with-background/LivingRoomPicGold.png";
 import {useState, useReducer} from "react";
 
 function SingleCartItem(props){
-
-    /* Icon Library :) */
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
     const [isBeingDeleted, setisBeingDeleted] = useState(false);
     const [, forceUpdate] = useReducer(x => x + 1, 0);
@@ -81,7 +78,7 @@ function SingleCartItem(props){
                     <h3 id="cart-title">{props.title}</h3>
                     <div>
                         <p id="cart-size">Suurus: {props.size}</p>
-                        <p>Raam: {frame}</p>
+                        <p>Raam: {props.frame}</p>
                         <h3>{props.summary}€</h3>
                     </div>
                 </div>
@@ -118,7 +115,7 @@ function SingleCartItem(props){
                     <td style={{width: "10%"}}><img style={{width: "100%"}} src={collagePicture}></img></td>
                     <td style={{maxWidth: "64px"}}>{props.title}</td>
                     <td>{props.size}</td>
-                    <td>{frame}</td>
+                    <td>{props.frame}</td>
                     <td>{props.summary}€</td>
                     <td style={{width: "20px"}}><a onClick={DeleteCartItem}>Eemalda</a></td>
                 </tr>

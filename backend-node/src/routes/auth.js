@@ -10,10 +10,10 @@ router.post(
     check("email")
       .isEmail()
       .normalizeEmail()
-      .withMessage("Must be correctly formatted e-mail"),
+      .withMessage("Email ei ole õiges formaadis"),
     check("password")
       .isLength({ min: 6 })
-      .withMessage("Must be at least 6 characters long"),
+      .withMessage("Parool peab olema vähemalt 6 tähte pikk"),
   ],
   validationMiddleware,
   authController.login
@@ -24,25 +24,25 @@ router.post(
   [
     check("firstName")
       .isLength({ min: 3 })
-      .withMessage("Must be at least 3 characters long")
+      .withMessage("Esinimi peab olema vähemalt 3 tähe pikk")
       .trim()
       .exists()
       .matches(/^[A-ZÕÄÖÜa-zõäöü]+$/)
-      .withMessage("Must be alphabetic"),
+      .withMessage("Esinimi pole õiges formaadis"),
     check("lastName")
       .isLength({ min: 3 })
-      .withMessage("Must be at least 3 characters long")
+      .withMessage("Perekonna nimi peab olema vähemalt 3 tähe pikk")
       .trim()
       .exists()
       .matches(/^[A-ZÕÄÖÜa-zõäöü]+$/)
-      .withMessage("Must be alphabetic"),
+      .withMessage("Perekonna nimi pole õiges formaadis"),
     check("email")
       .isEmail()
       .normalizeEmail()
-      .withMessage("Must be correctly formatted e-mail"),
+      .withMessage("Email pole õiges formaadis"),
     check("password")
       .isLength({ min: 6 })
-      .withMessage("Must be at least 6 characters long"),
+      .withMessage("Parool peab olema vähemalt 6 tähte pikk"),
   ],
   validationMiddleware,
   authController.signup

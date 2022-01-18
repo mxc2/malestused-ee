@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import InfoList from '../components/InfoList';
 import Reviews from '../home-components/Reviews';
 import HeartInMiddleCollage from "../images/with-background/BlackFrameBackground.png"
-import ClassicCollageBlackFrame from "../images/ClassicPhotoWIthBac.png"
+import ClassicCollageBlackFrame from "../images/with-background/ClassicPhotoWIthBac.png"
 import JustAnImage from "../images/JustAnImage.jpg"
 
 function Home(){     

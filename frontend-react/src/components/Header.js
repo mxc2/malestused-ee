@@ -4,7 +4,7 @@ import Logo from "../LogoTest.PNG"
 import Cross from "../images/icons/cross.svg"
 import History from "./History"
 import CartItems from "./CartItems"
-import Login from "./Login"
+import Login from "./Account/Login"
 
 import { useState, useReducer } from "react";
 //import Account from "../images/icons/account.svg"
@@ -57,15 +57,6 @@ function Navbar(props){
         }
     }
 
-    //ACCOUNT
-    function AccountToggleOn(){
-        document.getElementById("account-overlay-background").style.display = "block";
-    }
-
-    function AccountToggleOff(){
-        document.getElementById("account-overlay-background").style.display = "none";
-    }
-
     //Redirect to kollaažid
     function RedirectToCollagesCatalog(){
         History.push('/kollaažid');
@@ -95,8 +86,6 @@ function Navbar(props){
                     </Link>
                     
                     <a onClick={CartToggleOn}>Ostukorv</a>
-
-                    <a onClick={AccountToggleOn}>Konto</a>
 					
 					<Link to="/register">
                         <a onClick={CartToggleOff}>Register</a>
@@ -139,8 +128,9 @@ function Navbar(props){
                 }
 
             </div>
-
-            {/* Account Overlay */}
+            
+            {/*
+            { Account Overlay 
             <div id="account-overlay-background">
                 <div id="account-overlay">
                     <div id="account-header">Sisse logimine</div>
@@ -148,15 +138,10 @@ function Navbar(props){
                     <img id="exit-account" src={Cross} alt="Lahkuge" onClick={AccountToggleOff}></img>
 
                     <Login />
-
-                    {/*}
-                    <div className="row">
-                        <label for="email" id="account-label">Email</label>
-                        <input type="text" id="email" placeholder="Teie email..."></input>
-                    </div>
-                    */}
                 </div>
             </div>
+            */}
+            
         </div>
     );
 }

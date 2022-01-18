@@ -8,8 +8,8 @@ import CollageList from '../components/Collages-components/CollageList';
 import SelfDesign from "../components/Self-design-components/SelfDesign";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import History from "../components/History";
-import { If, Then, Else } from 'react-if';
-import DesignServicePicture from "../components/Design-service/DesignServicePicture"
+import { If } from 'react-if';
+import DesignService from "../components/Design-service/DesignService";
 
 function CollagesCatalog(){
     const [selectedProduct, setSelectedProduct] = useState("");
@@ -106,36 +106,10 @@ function CollagesCatalog(){
             {!Continue && Kujundusteenus && 
 
             <div>
+
                 <FadeIn>
-                <div className="left-designservice" style={{width: "45%", display: "block", marginLeft: "auto", marginRight: "auto", marginTop: "64px", marginLeft: "96px"}}>
-                    <DesignServicePicture />
-                </div>
-
-                <div className="right-designservice">
-                    
-                        <h1 id="header">Kujundusteenus:</h1>
-                        <p id="header" style={{fontSize: "24px", fontWeight: "500", marginTop: "36px"}}>Palun laadige üles pildid mis lähevad kollaaži peale</p>
-                        
-                        <div id="TEMP">
-                            <button id="button" style={{marginTop: "24px"}}>Lae üles pildid</button>
-                        </div>
-
-                        <h2 id="header" style={{fontSize: "24px", fontWeight: "500", marginTop: "64px"}}>Palun kirjeldage soovitud kollaaži</h2>
-
-                        <div id="TEMP">
-                            <textarea id="TEMP" rows="8" cols="80" style={{marginTop: "16px"}} required ref={collageDescriptionRef}></textarea>
-                        </div>
-
-                        <div id="TEMP">
-                            <button id="button" onClick={funcCompleteCustomization} style={{marginTop: "64px"}}>Alusta tellimusega</button>
-                        </div>
-
-                        <div className="back-button">
-                            <button id="button" style={{marginTop: "50px"}} onClick={funcBackFromKujundusteenus}>Tagasi</button>
-                        </div>
-
-                    
-                </div>
+                    <DesignService SelectedProduct={selectedProduct} SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]} />
+                    {/*<button id="button" style={{marginTop: "50px"}} onClick={funcBackFromKujundusteenus}>Tagasi</button>*/}
                 </FadeIn>
             </div>
             
@@ -149,9 +123,6 @@ function CollagesCatalog(){
                         <div id="TEMP">
                             <If condition={selectedProduct == 3}>
                                 <button id="button" style={{marginTop: "268px", width: "540px"}} onClick={funcIseKujundus}>Kujundan ise iseteeninduses</button>
-                                <Else>
-                                    
-                                </Else>
                             </If>
                             <button id="button" style={{marginTop: "268px", width: "540px"}} onClick={funcKujundusteenus}>Soovin kujundusteenust</button>
                         </div>

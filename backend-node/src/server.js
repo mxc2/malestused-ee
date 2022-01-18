@@ -23,11 +23,6 @@ app.use(express.json());
 app.use('/public', express.static('public'));
 
 app.use('/endpoint', imageRoutes)
-app.use((req, res, next) => {
-  setImmediate(() => {
-      next(new Error('Error occured'));
-  });
-});
 
 app.use('/api/auth', authRoutes);
 
@@ -39,11 +34,15 @@ app.get('/secret', jwtAuth, (req, res) => {
   res.send('Secret Hello World!')
 })
 
+app.get('*', (req, res) => {
+  res.send('This route does not exist')
+})
 
-
-// app.get('*', (req, res) => {
-//   res.send('This route does not exist')
-// })
+app.use((req, res, next) => {
+  setImmediate(() => {
+      next(new Error('Error occured'));
+  });
+});
 
 mongoose.Promise = global.Promise
 mongoose

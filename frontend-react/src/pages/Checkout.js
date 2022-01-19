@@ -1,5 +1,5 @@
 import "./Checkout.css"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import CartItems from "../components/CartItems";
 import Changename from "../components/Checkout-components/Changename";
 import ShippingLocation from "../components/Checkout-components/ShippingLocation";
@@ -8,6 +8,9 @@ function Checkout(){
 
     const [products] = useState([]);
     const [details, setDetails] = useState([]);
+
+    //Used to force cart to update when new product added
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
 
     useEffect(() => {
 
@@ -24,6 +27,7 @@ function Checkout(){
                     dataFrom: "Checkout" 
                 })
                 products.push(output);
+                forceUpdate();
             }
         }
       });

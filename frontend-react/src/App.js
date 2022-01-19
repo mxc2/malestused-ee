@@ -10,9 +10,15 @@ import Registration from './components/Account/Registration'
 import { useState } from 'react'
 import Login from './components/Account/Login'
 import Testingupload from "./components/file-upload"
+import MyAccount from './pages/MyAccount'
 
 function App() {
   const [user, setUser] = useState();
+
+  function Logout(){
+    setUser(null);
+  }
+
   return (
     <Router history={History}>
       <Header user={user} />
@@ -29,10 +35,13 @@ function App() {
           </Route>
 		      <Route exact path="/register" component={Registration} />
           <Route exact path="/login">
-            <Login setUser={setUser} />
+            <Login setUser={setUser} user={user} />
           </Route>
           <Route path="/test">
             <Testingupload/>
+          </Route>
+          <Route path="/my-account">
+            <MyAccount funcLogOut={Logout} user={user} />
           </Route>
         </div>
         <Footer />

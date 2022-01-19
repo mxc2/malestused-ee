@@ -1,16 +1,14 @@
 import "./Header.css"
 import Cross from "../images/icons/cross.svg"
-import { useState, useEffect, useReducer } from "react";
+import { useState } from "react";
 import CartItems from "./CartItems";
 
 
 
 function Cart(){
 
-    const [products, setProducts] = useState([]);
-    const [test, setTest] = useState(false);
-
-    const [, forceUpdate] = useReducer(x => x + 1, 0);
+    const [products] = useState([]);
+    const [ItemInCart] = useState(false);
 
     function CartToggleOff(){
         document.getElementById("cart-overlay").style.width = "0px";
@@ -27,13 +25,13 @@ function Cart(){
         <div id="cart-overlay">
                 <div id="cart-header">Ostukorv</div>
                 <img id="exit-cart" src={Cross} alt="Lahkuge ostukorvist" onClick={CartToggleOff}></img>
-                <hr class="cart-underline" />
+                <hr className="cart-underline" />
 
                 <div style={{color: "white"}}>
                     <p style={{color: "white"}}>{JSON.stringify(products.selectedCollageID)}</p>
                 </div>
 
-                {!test && 
+                {!ItemInCart && 
                 
                 <div onClick={RedirectToCollagesCatalog} className="cart-empty">
                     <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
@@ -41,7 +39,7 @@ function Cart(){
                 </div>
                 }
 
-                {test && 
+                {ItemInCart && 
                 <div>
                     <CartItems items={products}/>
 

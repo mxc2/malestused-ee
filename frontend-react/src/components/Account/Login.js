@@ -1,14 +1,14 @@
 import "./Login.css"
 import PropTypes from 'prop-types';
 import { useState } from "react";
+import History from "../History";
 
-export default function Login({setUser}){
+export default function Login({setUser}, props){
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const [error, setError] = useState("");
   
-
   async function loginUser(credentials) {
     const response = await fetch('http://localhost:8081/api/auth/login', {
       method: 'POST',
@@ -32,6 +32,7 @@ export default function Login({setUser}){
         if(token.token) {
           setUser(token);
           setError("")
+          History.push('/my-account');
         }else if(token.error){
           setError(token.error)
         } else {
@@ -41,7 +42,6 @@ export default function Login({setUser}){
         setError("Palun sisestage email ja parool");
       }
     }
-    
 
     return(
       
@@ -61,6 +61,8 @@ export default function Login({setUser}){
           <p style={{marginTop: "16px", marginBottom: "16px", color: "red"}}>{error}</p>
 
           <button id="button" style={{marginLeft: "auto", width: "50%"}} onClick={onFinish}>Logi Sisse</button>
+
+          <p>Või</p>
 
       </div>
     </div>

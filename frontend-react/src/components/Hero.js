@@ -20,7 +20,7 @@ function Hero(){
             </div>
 
             <div>
-                <img id="hero-product" src={Collage}></img>
+                <img id="hero-product" src={Collage} alt="Background"></img>
             </div>
         </div>
     )

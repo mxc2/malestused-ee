@@ -4,8 +4,28 @@
     bottom: 0; 
     height: 300px;
     width: 100%;
-    text-align: center;
     padding-top: 50px;
     background-color: #1f2024;
     color: white;
  }
+
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 35%;
+    margin: auto;
+    margin-top: 32px;
+  }
+  
+.footer-button{
+    border: 0px;
+    text-align: start;
+    color: #a3a3a3;
+    font-weight: 200;
+    font-size: medium;
+    margin-right: 0px;
+  }
+
+.footer-td{
+    border: 0px
+}

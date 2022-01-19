@@ -4,15 +4,17 @@ import Logo from "../LogoTest.PNG"
 import Cross from "../images/icons/cross.svg"
 import History from "./History"
 import CartItems from "./CartItems"
-import Login from "./Account/Login"
+import AccountIcon from "../images/icons/user.png"
+import AccountIconLoggedIn from "../images/icons/logged-in.png"
+import ShoppingCart from "../images/icons/shopping-cart.png"
 
 import { useState, useReducer } from "react";
 //import Account from "../images/icons/account.svg"
 
 function Navbar(props){
 
-    const [products, setProducts] = useState([]);
-    const [test, setTest] = useState(false);
+    const [products] = useState([]);
+    const [ItemInCart, setItemInCart] = useState(false); //True == There are items in cart
 
     //Used to force cart to update when new product added
     const [, forceUpdate] = useReducer(x => x + 1, 0);
@@ -32,12 +34,12 @@ function Navbar(props){
             }
         }
 
-        //If products is empty
+        //If products[] is empty
         if (products[0] == null) {
-            setTest(false);
+            setItemInCart(false);
         }else{
             forceUpdate();
-            setTest(true);
+            setItemInCart(true);
         }
 
         //Show Cart
@@ -78,22 +80,25 @@ function Navbar(props){
 
                 <div className="header-buttons">
                     <Link to="/kollaažid">
+                        {/*eslint-disable-next-line*/ }
                         <a onClick={CartToggleOff}>Kollaazid</a>
                     </Link>
 
                     <Link to="/meist">
-                        <a onClick={CartToggleOff}>Meist</a>
+                        {/*eslint-disable-next-line*/ }
+                        <a style={{marginRight: "8px"}} onClick={CartToggleOff}>Meist</a>
                     </Link>
-                    
-                    <a onClick={CartToggleOn}>Ostukorv</a>
+
+                    <img class="header-icon-buttons" src={ShoppingCart} alt="Ostukorv" onClick={CartToggleOn}></img>
 					
+                    {/*}
 					<Link to="/register">
                         <a onClick={CartToggleOff}>Register</a>
                     </Link>                                      
                     {/* //Ilmselt peaks, logini voi registeri kohugi mujale panema, et müra veits vähemaks headeris  */}
                     {props.user ?
-                    <Link to="/login"><a onClick={CartToggleOff}>{props.user.firstName} </a></Link>:
-                    <Link to="/login"><a onClick={CartToggleOff}>Log in</a></Link>
+                    <Link to="/my-account"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIconLoggedIn} alt="Konto"></img></Link>:
+                    <Link to="/login"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIcon} alt="Konto"></img></Link>
                     }
                     
                 </div>
@@ -104,10 +109,10 @@ function Navbar(props){
             <div id="cart-overlay">
                 <div id="cart-header">Ostukorv</div>
                 <img id="exit-cart" src={Cross} alt="Lahkuge ostukorvist" onClick={CartToggleOff}></img>
-                <hr class="cart-underline" />
+                <hr className="cart-underline" />
 
 
-                {!test && 
+                {!ItemInCart && 
 
                   <div onClick={RedirectToCollagesCatalog} className="cart-empty">
                       <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
@@ -115,7 +120,7 @@ function Navbar(props){
                   </div>
                 }
 
-                {test && 
+                {ItemInCart && 
                 <div>
                     <div id="cart-item">
                         <CartItems items={products}/>
@@ -128,20 +133,6 @@ function Navbar(props){
                 }
 
             </div>
-            
-            {/*
-            { Account Overlay 
-            <div id="account-overlay-background">
-                <div id="account-overlay">
-                    <div id="account-header">Sisse logimine</div>
-                    
-                    <img id="exit-account" src={Cross} alt="Lahkuge" onClick={AccountToggleOff}></img>
-
-                    <Login />
-                </div>
-            </div>
-            */}
-            
         </div>
     );
 }

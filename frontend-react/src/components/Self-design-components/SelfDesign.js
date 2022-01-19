@@ -1,6 +1,8 @@
 import "./SelfDesign.css";
+
 import React, { Component } from 'react';
 import History from "../History";
+import GridLayout from "./GridLayout"
 
 class Selfdesign extends Component{
 
@@ -10,11 +12,14 @@ class Selfdesign extends Component{
             ID: 0,
             selectedCollageID: this.props.SelfDesignSelectedCollage.id, 
             title: this.props.SelfDesignSelectedCollage.title,
-            Selectvalue: "A4",
+            value: "A4",
             price: this.props.SelfDesignSelectedCollage.price,
             frame: 0,
             summary: "",
         }
+
+        const layout = this.generateLayout();
+        //this.state = { layout };
     }
 
     //Generate random id for collage when page loads
@@ -29,18 +34,18 @@ class Selfdesign extends Component{
     //See what is selected in select
     divstatus = (e) =>{
         e.preventDefault();
-        this.setState({Selectvalue: e.target.value});
+        this.setState({value: e.target.value});
     };
 
     onClick = () =>{
-        if(this.state.Selectvalue === "A4"){
+        if(this.state.value === "A4"){
             this.setState({price: this.props.SelfDesignSelectedCollage.price});
             if(this.state.frame !== 0){
                 this.setFramePrice();
             }else{
                 this.removeFramePrice();
             }
-        }else if(this.state.Selectvalue === "A3"){
+        }else if(this.state.value === "A3"){
             this.setState({price: this.props.SelfDesignSelectedCollage.A3price});
             if(this.state.frame !== 0){
                 this.setFramePrice();
@@ -51,9 +56,9 @@ class Selfdesign extends Component{
     }
 
     setFramePrice = () =>{
-        if (this.state.Selectvalue === "A4"){
+        if (this.state.value === "A4"){
             this.setState({frame: 1.49});
-        }else if (this.state.Selectvalue === "A3"){
+        }else if (this.state.value === "A3"){
             this.setState({frame: 2.49});
         }
     };
@@ -81,16 +86,16 @@ class Selfdesign extends Component{
             }
         }
       };
-
+    
     render(){
 
         //Calculate the collage size and frame together. Why is this unde render()? Because we need to rerender it quickly
         this.state.summary = this.state.frame + this.props.SelfDesignSelectedCollage.price;
-
+        
         return(
         <div className="self-design">
             <div className="left">
-
+                <GridLayout/>
             </div> 
 
             <div className="right">
@@ -108,7 +113,7 @@ class Selfdesign extends Component{
 
                 <div>
                     <h3 style={{textAlign: "center", marginBottom: "8px"}}>Kollaaži valikud</h3>
-                    <button className="new-button">Genereeri uus kollaaž</button>
+                    <button className="new-button" onClick={this.onSize}>Genereeri uus kollaaž</button>
                 </div>
 
                 <div className="test2">

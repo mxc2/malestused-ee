@@ -4,6 +4,9 @@ import Logo from "../LogoTest.PNG"
 import Cross from "../images/icons/cross.svg"
 import History from "./History"
 import CartItems from "./CartItems"
+import AccountIcon from "../images/icons/user.png"
+import AccountIconLoggedIn from "../images/icons/logged-in.png"
+import ShoppingCart from "../images/icons/shopping-cart.png"
 import Login from "./Account/Login"
 
 import { useState, useReducer } from "react";
@@ -57,6 +60,15 @@ function Navbar(props){
         }
     }
 
+    //ACCOUNT
+    function AccountToggleOn(){
+        document.getElementById("account-overlay-background").style.display = "block";
+    }
+
+    function AccountToggleOff(){
+        document.getElementById("account-overlay-background").style.display = "none";
+    }
+
     //Redirect to kollaažid
     function RedirectToCollagesCatalog(){
         History.push('/kollaažid');
@@ -82,18 +94,19 @@ function Navbar(props){
                     </Link>
 
                     <Link to="/meist">
-                        <a onClick={CartToggleOff}>Meist</a>
+                        <a style={{marginRight: "8px"}} onClick={CartToggleOff}>Meist</a>
                     </Link>
-                    
-                    <a onClick={CartToggleOn}>Ostukorv</a>
+
+                    <img class="header-icon-buttons" src={ShoppingCart} onClick={CartToggleOn}></img>
 					
+                    {/*}
 					<Link to="/register">
                         <a onClick={CartToggleOff}>Register</a>
                     </Link>                                      
                     {/* //Ilmselt peaks, logini voi registeri kohugi mujale panema, et müra veits vähemaks headeris  */}
                     {props.user ?
-                    <Link to="/login"><a onClick={CartToggleOff}>{props.user.firstName} </a></Link>:
-                    <Link to="/login"><a onClick={CartToggleOff}>Log in</a></Link>
+                    <Link to="/my-account"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIconLoggedIn} alt="Konto"></img></Link>:
+                    <Link to="/login"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIcon} alt="Konto"></img></Link>
                     }
                     
                 </div>
@@ -128,9 +141,8 @@ function Navbar(props){
                 }
 
             </div>
-            
-            {/*
-            { Account Overlay 
+
+            {/* Account Overlay */}
             <div id="account-overlay-background">
                 <div id="account-overlay">
                     <div id="account-header">Sisse logimine</div>
@@ -138,10 +150,15 @@ function Navbar(props){
                     <img id="exit-account" src={Cross} alt="Lahkuge" onClick={AccountToggleOff}></img>
 
                     <Login />
+
+                    {/*}
+                    <div className="row">
+                        <label for="email" id="account-label">Email</label>
+                        <input type="text" id="email" placeholder="Teie email..."></input>
+                    </div>
+                    */}
                 </div>
             </div>
-            */}
-            
         </div>
     );
 }

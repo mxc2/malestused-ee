@@ -1,12 +1,17 @@
 import "./Login.css"
 import PropTypes from 'prop-types';
 import { useState } from "react";
+import History from "../History";
 
-export default function Login({setUser}){
+export default function Login({setUser}, props){
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const [error, setError] = useState("");
+
+  console.log(props);
+
+  if(props.user){console.log(props.user.firstName);}
   
 
   async function loginUser(credentials) {
@@ -32,6 +37,7 @@ export default function Login({setUser}){
         if(token.token) {
           setUser(token);
           setError("")
+          History.push('/my-account');
         }else if(token.error){
           setError(token.error)
         } else {
@@ -41,7 +47,6 @@ export default function Login({setUser}){
         setError("Palun sisestage email ja parool");
       }
     }
-    
 
     return(
       

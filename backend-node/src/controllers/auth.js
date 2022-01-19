@@ -8,10 +8,10 @@ exports.login = async (req, res) => {
   try {
     const user = await User.findOne({ email })
 
-    if (!user) throw Error("User with this e-mail does not exist")
+    if (!user) throw Error("Palun kontrollige emaili ja parooli")
 
     const isMatch = await bcrypt.compare(password, user.password)
-    if (!isMatch) throw Error("I should not say that the password does not match")
+    if (!isMatch) throw Error("Palun kontrollige emaili ja parooli")
 
     const userTemplate = {
       id: user.id,
@@ -21,7 +21,7 @@ exports.login = async (req, res) => {
     }
 
     const token = jwt.sign(userTemplate, process.env.JWT_SECRET)
-    if (!token) throw Error("Something critical happened 99981811")
+    if (!token) throw Error("Midagi kriitilist juhtus. Error: 99981811")
 
     res.status(200).json({
       token,
@@ -39,7 +39,7 @@ exports.signup = async (req, res) => {
   try {
     const user = await User.findOne({ email })
 
-    if (user) throw Error("User with that e-mail already exists")
+    if (user) throw Error("Selline email on juba kasutusel")
 
     const salt = await bcrypt.genSalt(10)
     if (!salt) throw Error("Something critical happened")
@@ -55,9 +55,9 @@ exports.signup = async (req, res) => {
     })
 
     const savedUser = await newUser.save()
-    if (!savedUser) throw Error("Error saving user")
+    if (!savedUser) throw Error("Tekkis probleem kasutaja salvestamisel")
 
-    res.status(200).json({ message: "User created successfully" })
+    res.status(200).json({ message: "Kasutaja loodud!" })
   } catch (e) {
     res.status(400).json({ error: e.message })
   }

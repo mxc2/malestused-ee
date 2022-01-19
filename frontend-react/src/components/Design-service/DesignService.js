@@ -19,7 +19,7 @@ export default class DesignService extends Component {
           selectedCollage: props.SelectedProduct,
           imgCollection: '',
           collageDescription: '',
-          summary: "",
+          summary: null,
           Selectvalue: "A4",
           frame: "Puudub",
           framePrice: 0,
@@ -116,19 +116,19 @@ export default class DesignService extends Component {
                         <h1 id="header">Kujundusteenus:</h1>
                         <p id="header" style={{fontSize: "24px", fontWeight: "500", marginTop: "36px"}}>Palun laadige üles pildid mis lähevad kollaaži peale</p>
                         
-                        <div id="TEMP">
+                        <div className="center">
                             <input className="form-control form-control-lg mb-3" type="file" multiple name="imgCollection" onChange={this.onImgChange} />
                         </div>
 
                         <h2 id="header" style={{fontSize: "24px", fontWeight: "500", marginTop: "64px"}}>Palun kirjeldage soovitud kollaaži</h2>
 
-                        <div id="TEMP">
-                            <textarea id="TEMP" rows="8" cols="80" type="text" style={{marginTop: "16px"}} value={this.state.value} required onChange={evt => this.updateInputValue(evt)}></textarea>
+                        <div className="center">
+                            <textarea rows="8" cols="80" type="text" style={{marginTop: "16px"}} value={this.state.value} onChange={evt => this.updateInputValue(evt)}></textarea>
                         </div>
 
                         <h3 style={{textAlign: "center", marginBottom: "8px"}}>Kollaaži suurus</h3>
 
-                        <div id="TEMP">
+                        <div className="center">
                             <select id="dropdown" onChange={this.divstatus} onClick={this.onClickSize}>
                                 <option value="A4" defaultValue>A4 (21x30cm)</option>
                                 <option value="A3">A3 (30x40cm)</option>
@@ -137,7 +137,7 @@ export default class DesignService extends Component {
 
                         <h3 style={{textAlign: "center", marginBottom: "8px"}}>Kollaaži raam</h3>
 
-                        <div id="TEMP">
+                        <div className="center">
                             <select id="dropdown" onChange={this.FrameStatus} onClick={this.onClickFrame}>
                                 <option value="Puudub" defaultValue>Puudub</option>
                                 <option value="Must">Must</option>
@@ -146,7 +146,7 @@ export default class DesignService extends Component {
                             </select>
                         </div>
 
-                        <div id="TEMP">
+                        <div className="center">
                             <button id="button" onClick={this.onUpload} style={{marginTop: "64px"}}>Edasi</button>
                         </div>  
                 </div>

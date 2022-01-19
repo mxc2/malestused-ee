@@ -19,9 +19,17 @@ a{
     margin-top: 14px;
 }
 
+.header-icon-buttons{
+    height: 32px;
+    margin-right: 12px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    cursor: pointer
+}
+
 .header {
     padding-top: 25px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
     overflow: hidden;
     margin-left: 100px;
     margin-right: 100px;

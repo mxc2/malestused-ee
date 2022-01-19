@@ -1,15 +1,13 @@
 import "./CollagesCatalog.css"
 import React, { useState, useRef } from 'react';
-import BackArrow from "../images/icons/double-arrow-left.svg"
 import HeartInMiddleCollage from "../images/Collages-catalog/BlackPicFrameWithHeartMiddle (1).png"
 import ClassicCollageBlackFrame from "../images/Collages-catalog/BlackFrameClassic.png"
 import HeartShapedCollage from "../images/Collages-catalog/NewDesign.png"
 import CollageList from '../components/Collages-components/CollageList';
 import SelfDesign from "../components/Self-design-components/SelfDesign";
 import FadeIn from "react-fade-in/lib/FadeIn";
-import History from "../components/History";
-import { If } from 'react-if';
-import DesignService from "../components/Design-service/DesignService";
+import { If, Then, Else } from 'react-if';
+import DesignService from "../components/Design-service/DesignService"
 
 function CollagesCatalog(){
     const [selectedProduct, setSelectedProduct] = useState("");
@@ -35,10 +33,17 @@ function CollagesCatalog(){
         document.getElementById("center-button").style.display = "flex";
     }
 
-    //Once pressing "Edasi" button, get the selected collage id and show iseteenindus valikut
+    //Once pressing "Edasi" button, get the selected collage id and show iseteenindus valikut kui collage = 3
     function funcContinue(){
         if(selectedProduct){
-            setContinue(true);
+            if(selectedProduct !== 3){
+                setKujundusteenus(true);
+                setIseKujundus(false);
+                setContinue(false);
+            }else{
+                setContinue(true);
+            }
+            
         }else{
             console.log("Please add code to if not selected");
         }
@@ -74,18 +79,16 @@ function CollagesCatalog(){
     }
 
     function funcBackFromKujundusteenus(){
-        setKujundusteenus(false);
-        setIseKujundus(false);
-        setContinue(true);
-    }
-
-    function funcCompleteCustomization(){
-        const FinishedProduct = [{selectedCollage: selectedProduct, uploadedPictures: "Uploads", collageDescription: collageDescriptionRef.current.value}];
-        
-        History.push({
-            pathname: '/tellimus',
-            state: FinishedProduct
-        });    
+        if(selectedProduct !== 3){
+            setKujundusteenus(false);
+            setIseKujundus(false);
+            setContinue(false);
+            setSelectedProduct("");
+        }else{
+            setKujundusteenus(false);
+            setIseKujundus(false);
+            setContinue(true);
+        }
     }
 
     return(
@@ -95,6 +98,7 @@ function CollagesCatalog(){
             {!Continue && IseKujundus && 
             
                 <div>
+                    <button id="navigation-button" style={{marginLeft: "64px", marginTop: "16px"}} onClick={funcBackFromContinue}>&larr; Tagasi</button>
                     <FadeIn>
                         {/* Give SelfDesign the right collage style */}
                         <SelfDesign SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]}/>
@@ -106,9 +110,9 @@ function CollagesCatalog(){
             {!Continue && Kujundusteenus && 
 
             <div>
-
                 <FadeIn>
-                    <DesignService SelectedProduct={selectedProduct} SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]} />
+                    <button id="navigation-button" style={{marginLeft: "64px", marginTop: "16px"}} onClick={funcBackFromKujundusteenus}>&larr; Tagasi</button>
+                    <DesignService SelectedProduct={selectedProduct} SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]}/>
                     {/*<button id="button" style={{marginTop: "50px"}} onClick={funcBackFromKujundusteenus}>Tagasi</button>*/}
                 </FadeIn>
             </div>
@@ -118,19 +122,19 @@ function CollagesCatalog(){
             {Continue && 
                 <div>
                     <FadeIn>
+                        <button id="navigation-button" style={{marginLeft: "64px", marginTop: "16px"}} onClick={funcBackFromContinue}>&larr; Tagasi</button>
+
                         <h1 id="header">Kas kujundad kollaaži ise või kasutad kujundusteenust?</h1>
                         
-                        <div id="TEMP">
+                        <div className="center">
                             <If condition={selectedProduct == 3}>
                                 <button id="button" style={{marginTop: "268px", width: "540px"}} onClick={funcIseKujundus}>Kujundan ise iseteeninduses</button>
+                                <Else>
+                                    
+                                </Else>
                             </If>
                             <button id="button" style={{marginTop: "268px", width: "540px"}} onClick={funcKujundusteenus}>Soovin kujundusteenust</button>
-                        </div>
-
-                        <div id="TEMP">
-                            <button id="button" style={{marginTop: "268px"}} onClick={funcBackFromContinue}><i styles={{backgroundImage: BackArrow}}></i>Tagasi</button>
-                        </div>
-                        
+                        </div>               
                     </FadeIn>
                 </div>
             }

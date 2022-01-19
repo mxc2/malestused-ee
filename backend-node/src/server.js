@@ -5,12 +5,15 @@ const PORT = process.env.PORT || 3000
 var cors = require('cors');
 const jwtAuth = require("./middleware/jwtAuth")
 require("dotenv").config()
-// const postCharge = require('./stripe')
 
 
 const imageRoutes = require('./routes/image.route')
 const authRoutes = require('./routes/auth')
 const orderRoutes = require('./routes/collageOrder.route')
+
+const dpdRoute = require('./routes/dpd')
+const itellaRoute = require('./routes/itella')
+const omnivaRoute = require('./routes/omniva')
 
 const app = express()
 app.use(bodyParser.json());
@@ -30,6 +33,11 @@ app.use('/endpoint', imageRoutes)
 app.use('/api/order', orderRoutes);
 
 app.use('/api/auth', authRoutes);
+
+
+app.use('/service', dpdRoute);
+app.use('/service', itellaRoute);
+app.use('/service', omnivaRoute);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

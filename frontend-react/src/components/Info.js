@@ -22,8 +22,8 @@ function Info(props){
                     <img className={image} src={props.img} alt="Describing text"></img>
                 </div>
                 <div className={text}>
-                    <h1 style={{textAlign: "center"}}>{props.header}</h1>
-                    <p style={{fontSize: "24px"}}>{props.text}</p>
+                    <h2 style={{textAlign: "center"}}>{props.header}</h2>
+                    <p>{props.text}</p>
                 </div>
             </div>
         </div>

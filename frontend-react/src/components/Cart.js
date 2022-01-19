@@ -1,6 +1,6 @@
 import "./Header.css"
 import Cross from "../images/icons/cross.svg"
-import { useState } from "react";
+import { useState, useReducer, useEffect } from "react";
 import CartItems from "./CartItems";
 
 
@@ -8,7 +8,31 @@ import CartItems from "./CartItems";
 function Cart(){
 
     const [products] = useState([]);
-    const [ItemInCart] = useState(false);
+    const [ItemInCart, setItemInCart] = useState(false);
+
+    //Used to force cart to update when new product added
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
+
+    //Delete previous array
+    products.splice(0, 20);
+
+    //Read products from local storage and push them to array
+    for (var i = 0; i < 20; i++) {
+        const Item = "Product" + i;
+        const output = JSON.parse(localStorage.getItem(Item));
+
+        if(output !== null){
+            products.push(output);
+        }
+    }
+
+    //If products[] is empty
+    if (products[0] == null) {
+        setItemInCart(false);
+    }else{
+        forceUpdate();
+        setItemInCart(true);
+    }
 
     function CartToggleOff(){
         document.getElementById("cart-overlay").style.width = "0px";
@@ -19,6 +43,10 @@ function Cart(){
     function RedirectToCollagesCatalog(){
         History.push('/kollaažid');
         CartToggleOff();
+    }
+
+    function deleteProduct(data){
+        console.log(products);
     }
 
     return(
@@ -41,7 +69,7 @@ function Cart(){
 
                 {ItemInCart && 
                 <div>
-                    <CartItems items={products}/>
+                    <CartItems items={products} funcDelete={deleteProduct}/>
 
                     <button id="bottom-button">Arveldama</button>
                 </div>

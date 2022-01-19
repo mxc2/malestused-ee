@@ -9,14 +9,16 @@ exports.getOrder = async (req, res) => {
 exports.createOrder = async function (req, res) {
 
   const newOrder = {
+    ID: req.body.ID,
     title: req.body.title,
+    collageDescription: req.body.collageDescription,
     selectedCollageID: req.body.selectedCollageID,
-    selectedCollage: req.body.selectedCollage,
     Selectvalue: req.body.Selectvalue,
-    frameprice: req.body.frameprice,
-    price: req.body.price,
+    frame: req.body.frame,
+    framePrice: req.body.framePrice,
+    summary: req.body.summary,
     firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    surname: req.body.surname,
     email: req.body.email,
     phone: req.body.phone,
     transCo: req.body.transCo,

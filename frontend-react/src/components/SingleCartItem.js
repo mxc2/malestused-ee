@@ -3,13 +3,14 @@ import "./Cart.css";
 import "../pages/Checkout.css"
 import TrashIcon from "../images/icons/remove-cross.svg";
 import HeartInMiddleCollage from "../images/with-background/BlackFrameBackground.png";
-import ClassicCollageBlackFrame from "../images/with-background/ClassicPhotoWIthBac.png";
-import HeartShapedCollage from "../images/with-background/LivingRoomPicGold.png";
+import ClassicCollageBlackFrame from "../images/with-background/ClassicPhotoWIthBacPlaceHolder.png";
+import HeartShapedCollage from "../images/with-background/LivingRoomPicGoldPlaceHolder.png";
 import {useState, useReducer} from "react";
 
 function SingleCartItem(props){
 
     const [isBeingDeleted, setisBeingDeleted] = useState(false);
+    const [Deleted, setDeleted] = useState(false);
     const [, forceUpdate] = useReducer(x => x + 1, 0);
 
     var collagePicture = "";
@@ -40,11 +41,13 @@ function SingleCartItem(props){
                 const output = JSON.parse(localStorage.getItem(Item));
 
                 if(output.ID === props.ID){
+                    props.funcDelete(output.ID);
                     localStorage.removeItem(Item);
+
+                    setDeleted(true);
                     forceUpdate();
                     break;
                 }
-                
             }
             catch(err){}         
         }
@@ -77,7 +80,7 @@ function SingleCartItem(props){
             </div>
             }
 
-            {!props.dataFrom && isBeingDeleted &&
+            {!props.dataFrom && isBeingDeleted && !Deleted &&
             <div className="back" style={{backgroundColor: "red"}}>
 
                 <div className="delete-buttons">
@@ -85,6 +88,11 @@ function SingleCartItem(props){
                     <button className="btn" onClick={CancelDelete}>Tühista</button>
                 </div>
 
+            </div>
+            }
+
+            {!props.dataFrom && !isBeingDeleted && Deleted &&
+            <div>
             </div>
             }
 

@@ -16,6 +16,7 @@
 .text {
     float: right;
     width: 55%;
+    font-size: 24px;
 }
 
 .image-reversed {
@@ -29,6 +30,7 @@
 .text-reversed {
     float: left;
     width: 55%;
+    font-size: 24px;
 }
 
 .row::after {
@@ -36,3 +38,49 @@
     clear: both;
     display: table;
 }
+
+@media only screen and (max-width: 2305px) {
+    .info-content{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .text {
+        float: right;
+        width: 55%;
+        font-size: 20px;
+    }
+
+    .text-reversed {
+        float: left;
+        width: 55%;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 28px
+    }
+  }
+
+@media only screen and (max-width: 1427px) {
+    .info-content{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .text {
+        float: right;
+        width: 55%;
+        font-size: 18px;
+    }
+
+    .text-reversed {
+        float: left;
+        width: 55%;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 28px
+    }
+  }

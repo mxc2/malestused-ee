@@ -14,7 +14,8 @@ function CartItems(props) {
       price={product.price}
       frame={product.frame}
       summary={product.summary}
-      dataFrom={product.dataFrom}/>
+      dataFrom={product.dataFrom}
+      funcDelete={props.funcDelete}/>
     ))}
   </div>); 
 }

@@ -1,0 +1,43 @@
+.reviews-content{
+    text-align: center;
+    background-color: #673ab7;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    align-items: center;
+}
+
+.quote-row{
+    width: fit-content;
+    display: inline-block
+}
+
+#header{
+    font-weight: 500;
+    font-size: 28px;
+}
+
+#quote{
+    font-style: italic;
+    font-size: x-large;
+    font-weight: 300;
+}
+
+#author{
+    font-weight: 100;
+    font-style: italic;
+    font-size: x-large;
+    margin-right: 50px;
+    text-align: end;
+}
+
+@media only screen and (max-width: 1205px) {
+    #header{
+        font-size: 24px;
+    }
+
+    #quote{
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+  }

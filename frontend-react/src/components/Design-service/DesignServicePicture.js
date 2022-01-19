@@ -13,7 +13,7 @@ function CollagesCatalog(props){
     //1 heartinmiddle, 2 heartshaped, 3 classic
 
     return(
-        <div className="products-container" style={{display: "flex", justifyContent: "center"}}>
+        <div className="products-container">
             <Switch>
                 <Case condition={props.SelectedProduct === 1}>
                     <ProgressiveImage delay={400} src={HeartInMiddleCollage} placeholder={HeartInMiddleCollagePlacheHolder}>

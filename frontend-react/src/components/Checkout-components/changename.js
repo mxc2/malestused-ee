@@ -31,7 +31,7 @@ export default function Changename(props){
                     <label for="last-name">Perekonna nimi:</label>
                 </div>
                 <div className="col-75">
-                    <input  type="text" id="last-name" onChange={formSubmitHandler} ref={surnameInputRef}></input>
+                    <input type="text" id="last-name" onChange={formSubmitHandler} ref={surnameInputRef}></input>
                 </div>
             </div>
             <div className="row-input">
@@ -39,7 +39,7 @@ export default function Changename(props){
                     <label for="email">Email:</label>
                 </div>
                 <div className="col-75">
-                    <input  type="text" id="email" onChange={formSubmitHandler} ref={emailInputRef}></input>
+                    <input type="text" id="email" onChange={formSubmitHandler} ref={emailInputRef}></input>
                 </div>
             </div>
             <div className="row-input">
@@ -47,7 +47,7 @@ export default function Changename(props){
                     <label for="phone">Telefon:</label>
                 </div>
                 <div className="col-75">
-                    <input  type="text" id="phone" onChange={formSubmitHandler} ref={phoneInputRef}></input>
+                    <input type="text" id="phone" onChange={formSubmitHandler} ref={phoneInputRef}></input>
                 </div>
             </div>
         </div>

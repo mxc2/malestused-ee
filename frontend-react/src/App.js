@@ -6,9 +6,9 @@ import CollagesCatalog from './pages/CollagesCatalog'
 import Footer from './components/Footer'
 import History from './components/History'
 import Checkout from './pages/Checkout'
-import Registration from './components/Registration'
+import Registration from './components/Account/Registration'
 import { useState } from 'react'
-import Login from './components/Login'
+import Login from './components/Account/Login'
 import Testingupload from "./components/file-upload"
 
 function App() {

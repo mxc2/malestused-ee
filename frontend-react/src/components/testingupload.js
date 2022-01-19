@@ -30,7 +30,7 @@ if(isLoading){
 return (
   <div className="upload">
     <UploadComponent />
-      {/* <img src={loadedPosts.posts[0].imgCollection} /> */}
+      <img src={loadedPosts.posts[0].imgCollection} />
   </div>
       
 );

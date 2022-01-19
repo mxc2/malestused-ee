@@ -29,6 +29,7 @@ app.use('/endpoint', imageRoutes)
 
 app.use('/api/order', orderRoutes);
 
+
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
@@ -43,11 +44,12 @@ app.get('*', (req, res) => {
   res.send('This route does not exist')
 })
 
-// app.use((req, res, next) => {
-//   setImmediate(() => {
-//       next(new Error('Error occured'));
-//   });
-// });
+app.use((req, res, next) => {
+  setImmediate(() => {
+      next(new Error('Error occured'));
+  });
+});
+
 
 mongoose.Promise = global.Promise
 mongoose

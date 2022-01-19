@@ -17,7 +17,7 @@ export default function Changename(props){
     }
     return(
         <div className="user-details">
-            <h3 style={{textAlign: "center"}}>Tellija andmed:</h3>
+            <h3 style={{textAlign: "center", paddingBottom: "12px"}}>Tellija andmed:</h3>
             <div className="row-input">
                 <div className="col-25">
                     <label for="first-name">Eesnimi:</label>

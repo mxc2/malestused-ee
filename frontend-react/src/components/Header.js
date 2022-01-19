@@ -61,8 +61,7 @@ function Navbar(props){
     }
 
     
-    function deleteProduct(data){
-        console.log("DeleteProduct RUnning")
+    function deleteProduct(){
         //Delete previous array
         products.splice(0, 20);
 

@@ -10,6 +10,7 @@ function Checkout(){
 
     const [products, setProducts] = useState([]);
     const [details, setDetails] = useState([]);
+    var [postal, setPostal] = useState([]);
     const [Ordered, setOrdered] = useState(false);
     init("user_EtrkOabsqKejNGHRv9jOl"); // Used for email
 
@@ -43,6 +44,10 @@ function Checkout(){
         setDetails(data);
     }
 
+    function funcShipping(data){
+        postal = data;
+    }
+
     function sendData(){
         
 
@@ -52,7 +57,9 @@ function Checkout(){
 
             if(output !== null){
                 
-                var mergedObj = {...output,...details};
+                var mergedObj = {...output,...details,...postal};
+
+                console.log(mergedObj);
 
                 axios.post("http://localhost:8081/api/order/create", mergedObj, {
                 }).then(response => {
@@ -103,14 +110,19 @@ function Checkout(){
                     <CartItems items={products}/>
                 </div>
 
-
-                <div style={{marginTop: "16px", width: "55%", margin: "auto", maxWidth: "1320px"}}>
+                <div className="center-child">
                     <Changename funcDetails={funcDetails}/>
-                    <ShippingLocation />
                 </div>
 
-                <div style={{display: "block"}}>
-                    <button onClick={sendData}>Esita tellimus</button>
+                <div className="center-child">
+                    <ShippingLocation funcSendData={funcShipping} />
+                </div>
+
+
+                
+
+                <div className="center" style={{paddingTop: "75px", paddingBottom: "100px"}}>
+                    <button id="button" onClick={sendData}>Esita tellimus</button>
                 </div>
             </div>
             }

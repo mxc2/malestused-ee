@@ -22,8 +22,6 @@ export default class DesignService extends Component {
           Selectvalue: "A4",
           frame: "Puudub",
           framePrice: 0,
-          transCo: "DPD Test",
-          parcelAddress: "Männi Test",
           selectionPrice: this.props.SelfDesignSelectedCollage.price,
           error: null
         }

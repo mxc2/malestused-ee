@@ -1,15 +1,16 @@
-.shipping-location{
-    float: right;
-    width: 50%
-}
-
 #transport-company-image{
-    width: 84px;
-    border: 1px solid black;
+    width: 72px;
     cursor: pointer;
     margin-right: 16px;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
+    border: 2px solid black;
 }
 
-#transport-company-image:active{
-    border: 1px solid purple;
+#transport-company-image:hover{
+    border: #7349e6;
+    border-style: solid;
+    border-width: 6px;
 }

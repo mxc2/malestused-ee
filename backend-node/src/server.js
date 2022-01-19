@@ -52,11 +52,11 @@ app.get('*', (req, res) => {
   res.send('This route does not exist')
 })
 
-app.use((req, res, next) => {
-  setImmediate(() => {
-      next(new Error('Error occured'));
-  });
-});
+// app.use((req, res, next) => {
+//   setImmediate(() => {
+//       next(new Error('Error occured'));
+//   });
+// });
 
 
 mongoose.Promise = global.Promise

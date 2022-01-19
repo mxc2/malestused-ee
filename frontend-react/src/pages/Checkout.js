@@ -1,7 +1,7 @@
 import "./Checkout.css"
 import React, { useState, useReducer } from "react";
 import CartItems from "../components/CartItems";
-import Changename from "../components/Checkout-components/Changename";
+import Changename from "../components/Checkout-components/changename";
 import ShippingLocation from "../components/Checkout-components/ShippingLocation";
 import axios from 'axios';
 import emailjs, { init } from '@emailjs/browser'

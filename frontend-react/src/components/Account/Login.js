@@ -8,12 +8,7 @@ export default function Login({setUser}, props){
   const [password, setPassword] = useState();
 
   const [error, setError] = useState("");
-
-  console.log(props);
-
-  if(props.user){console.log(props.user.firstName);}
   
-
   async function loginUser(credentials) {
     const response = await fetch('http://localhost:8081/api/auth/login', {
       method: 'POST',
@@ -66,6 +61,8 @@ export default function Login({setUser}, props){
           <p style={{marginTop: "16px", marginBottom: "16px", color: "red"}}>{error}</p>
 
           <button id="button" style={{marginLeft: "auto", width: "50%"}} onClick={onFinish}>Logi Sisse</button>
+
+          <p>Või</p>
 
       </div>
     </div>

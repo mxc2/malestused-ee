@@ -15,11 +15,11 @@ function Home(){
 
     const Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend, turpis ac efficitur hendrerit, enim urna luctus lacus, vel aliquet libero ligula sit amet diam. Nullam id pellentesque risus, sed consectetur elit. Praesent at varius sapien. Sed mattis laoreet dictum. Phasellus faucibus interdum sapien eu dapibus. Ut a tempus ligula. ";
 
-    const FirstInfo = [{header: FirstHeader, text: Text, img: HeartInMiddleCollage, location: "1"}];
+    const FirstInfo = [{id: 1, header: FirstHeader, text: Text, img: HeartInMiddleCollage, location: "1"}];
 
-    const SecondInfo = [{header: SecondHeader, text: Text, img: ClassicCollageBlackFrame, location: "2"}];
+    const SecondInfo = [{id: 2, header: SecondHeader, text: Text, img: ClassicCollageBlackFrame, location: "2"}];
 
-    const ThirdInfo = [{header: ThirdHeader, text: Text, img: JustAnImage, location: "1"}];
+    const ThirdInfo = [{id: 3, header: ThirdHeader, text: Text, img: JustAnImage, location: "1"}];
 
     return(
         <div>

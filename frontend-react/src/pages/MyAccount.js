@@ -7,11 +7,18 @@ function MyAccount(props){
         History.push('/login');
     }
 
+    function logOut(){
+        props.funcLogOut();
+        History.push('/login');
+    }
+    
     return(
         <div>
             <hr />
 
             <h1 style={{textAlign: "center"}}>Minu konto:</h1>
+
+            <button id="logout-button" onClick={logOut}>Logi välja</button>
         </div>
     )
 }   

@@ -1,12 +1,12 @@
 import "./CollagesCatalog.css"
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import HeartInMiddleCollage from "../images/Collages-catalog/BlackPicFrameWithHeartMiddle (1).png"
 import ClassicCollageBlackFrame from "../images/Collages-catalog/BlackFrameClassic.png"
 import HeartShapedCollage from "../images/Collages-catalog/NewDesign.png"
 import CollageList from '../components/Collages-components/CollageList';
 import SelfDesign from "../components/Self-design-components/SelfDesign";
 import FadeIn from "react-fade-in/lib/FadeIn";
-import { If, Then, Else } from 'react-if';
+import { If, Else } from 'react-if';
 import DesignService from "../components/Design-service/DesignService"
 
 function CollagesCatalog(){
@@ -14,9 +14,6 @@ function CollagesCatalog(){
     const [Continue, setContinue] = useState(false);
     const [Kujundusteenus, setKujundusteenus] = useState(false);
     const [IseKujundus, setIseKujundus] = useState(false);
-    const collageDescriptionRef = useRef();
-    
-    console.log(selectedProduct);
 
     //TEMPORARY
     const CollageStyles = [
@@ -60,15 +57,6 @@ function CollagesCatalog(){
         setIseKujundus(true);
         setKujundusteenus(false);
         setContinue(false);
-    }
-
-    //Once typed into textarea then show button
-    function funcDescription(){
-        if(collageDescriptionRef){
-            document.getElementById("center-button").style.display = "flex";
-        }else{
-            document.getElementById("center-button").style.display = "none";
-        }
     }
 
     function funcBackFromContinue(){
@@ -127,6 +115,7 @@ function CollagesCatalog(){
                         <h1 id="header">Kas kujundad kollaaži ise või kasutad kujundusteenust?</h1>
                         
                         <div className="center">
+                            {/*eslint-disable-next-line*/ }
                             <If condition={selectedProduct == 3}>
                                 <button id="button" style={{marginTop: "268px", width: "540px"}} onClick={funcIseKujundus}>Kujundan ise iseteeninduses</button>
                                 <Else>

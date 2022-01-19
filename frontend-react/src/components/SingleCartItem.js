@@ -2,7 +2,6 @@ import "./Cart";
 import "./Cart.css";
 import "../pages/Checkout.css"
 import TrashIcon from "../images/icons/remove-cross.svg";
-import TrashIconBlack from "../images/icons/remove-cross-black.svg";
 import HeartInMiddleCollage from "../images/with-background/BlackFrameBackground.png";
 import ClassicCollageBlackFrame from "../images/with-background/ClassicPhotoWIthBac.png";
 import HeartShapedCollage from "../images/with-background/LivingRoomPicGold.png";
@@ -13,7 +12,6 @@ function SingleCartItem(props){
     const [isBeingDeleted, setisBeingDeleted] = useState(false);
     const [, forceUpdate] = useReducer(x => x + 1, 0);
 
-    var frame = "";
     var collagePicture = "";
 
     //Set picture for collage
@@ -23,11 +21,6 @@ function SingleCartItem(props){
         collagePicture = ClassicCollageBlackFrame;
     }else if(props.selectedCollageID === 2){
         collagePicture = HeartShapedCollage;
-    }
-
-    //If there is no frame
-    if(props.frame === 0){
-        frame = "Puudub";
     }
 
     function DeletetionPrompt(){
@@ -55,10 +48,6 @@ function SingleCartItem(props){
             }
             catch(err){}         
         }
-    }
-
-    function DeleteItem(){
-        console.log(props);
     }
 
     //How does this work?
@@ -112,12 +101,12 @@ function SingleCartItem(props){
                     <th>Valikud:</th>
                 </tr>
                 <tr>
-                    <td style={{width: "10%"}}><img style={{width: "100%"}} src={collagePicture}></img></td>
+                    <td style={{width: "10%"}}><img style={{width: "100%"}} src={collagePicture} alt="Kollaažist pilt"></img></td>
                     <td style={{maxWidth: "64px"}}>{props.title}</td>
                     <td>{props.size}</td>
                     <td>{props.frame}</td>
                     <td>{props.summary}€</td>
-                    <td style={{width: "20px"}}><a onClick={DeleteCartItem}>Eemalda</a></td>
+                    <td style={{width: "20px", cursor: "pointer"}}><p onClick={DeleteCartItem}>Eemalda</p></td>
                 </tr>
               </table>
             }

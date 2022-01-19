@@ -2,7 +2,6 @@ import "./SelfDesign.css";
 
 import React, { Component } from 'react';
 import History from "../History";
-import { withSize } from 'react-sizeme'
 import GridLayout from "./GridLayout"
 
 class Selfdesign extends Component{

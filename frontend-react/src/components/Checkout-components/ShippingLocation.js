@@ -15,9 +15,9 @@ function ShippingLocation(){
             <h3 style={{textAlign: "center"}}>Transport:</h3>
             <div style={{margin: "auto", alignItems: "center"}} className="row-input">
                 <label>Vali firma</label>
-                <img src={DPD} id="transport-company-image" value="1"></img>
-                <img src={Itella} id="transport-company-image" value="2"></img>
-                <img src={Omniva} id="transport-company-image" value="3" OnClick={Click}></img>
+                <img src={DPD} id="transport-company-image" alt="DPD" value="1"></img>
+                <img src={Itella} id="transport-company-image" alt="Itella" value="2"></img>
+                <img src={Omniva} id="transport-company-image" alt="Omniva" value="3" OnClick={Click}></img>
             </div>
             <div className="row-input">
                 <div className="col-25">

@@ -7,15 +7,14 @@ import CartItems from "./CartItems"
 import AccountIcon from "../images/icons/user.png"
 import AccountIconLoggedIn from "../images/icons/logged-in.png"
 import ShoppingCart from "../images/icons/shopping-cart.png"
-import Login from "./Account/Login"
 
 import { useState, useReducer } from "react";
 //import Account from "../images/icons/account.svg"
 
 function Navbar(props){
 
-    const [products, setProducts] = useState([]);
-    const [test, setTest] = useState(false);
+    const [products] = useState([]);
+    const [ItemInCart, setItemInCart] = useState(false); //True == There are items in cart
 
     //Used to force cart to update when new product added
     const [, forceUpdate] = useReducer(x => x + 1, 0);
@@ -35,12 +34,12 @@ function Navbar(props){
             }
         }
 
-        //If products is empty
+        //If products[] is empty
         if (products[0] == null) {
-            setTest(false);
+            setItemInCart(false);
         }else{
             forceUpdate();
-            setTest(true);
+            setItemInCart(true);
         }
 
         //Show Cart
@@ -58,15 +57,6 @@ function Navbar(props){
         if (document.getElementById('bottom-button') ){
             document.getElementById('bottom-button').style.marginRight = "-50%";
         }
-    }
-
-    //ACCOUNT
-    function AccountToggleOn(){
-        document.getElementById("account-overlay-background").style.display = "block";
-    }
-
-    function AccountToggleOff(){
-        document.getElementById("account-overlay-background").style.display = "none";
     }
 
     //Redirect to kollaažid
@@ -90,14 +80,16 @@ function Navbar(props){
 
                 <div className="header-buttons">
                     <Link to="/kollaažid">
+                        {/*eslint-disable-next-line*/ }
                         <a onClick={CartToggleOff}>Kollaazid</a>
                     </Link>
 
                     <Link to="/meist">
+                        {/*eslint-disable-next-line*/ }
                         <a style={{marginRight: "8px"}} onClick={CartToggleOff}>Meist</a>
                     </Link>
 
-                    <img class="header-icon-buttons" src={ShoppingCart} onClick={CartToggleOn}></img>
+                    <img class="header-icon-buttons" src={ShoppingCart} alt="Ostukorv" onClick={CartToggleOn}></img>
 					
                     {/*}
 					<Link to="/register">
@@ -117,10 +109,10 @@ function Navbar(props){
             <div id="cart-overlay">
                 <div id="cart-header">Ostukorv</div>
                 <img id="exit-cart" src={Cross} alt="Lahkuge ostukorvist" onClick={CartToggleOff}></img>
-                <hr class="cart-underline" />
+                <hr className="cart-underline" />
 
 
-                {!test && 
+                {!ItemInCart && 
 
                   <div onClick={RedirectToCollagesCatalog} className="cart-empty">
                       <p>Hmm...Tundub et teie ostukorv on tühi 🤔</p>
@@ -128,7 +120,7 @@ function Navbar(props){
                   </div>
                 }
 
-                {test && 
+                {ItemInCart && 
                 <div>
                     <div id="cart-item">
                         <CartItems items={products}/>
@@ -140,24 +132,6 @@ function Navbar(props){
                 </div>
                 }
 
-            </div>
-
-            {/* Account Overlay */}
-            <div id="account-overlay-background">
-                <div id="account-overlay">
-                    <div id="account-header">Sisse logimine</div>
-                    
-                    <img id="exit-account" src={Cross} alt="Lahkuge" onClick={AccountToggleOff}></img>
-
-                    <Login />
-
-                    {/*}
-                    <div className="row">
-                        <label for="email" id="account-label">Email</label>
-                        <input type="text" id="email" placeholder="Teie email..."></input>
-                    </div>
-                    */}
-                </div>
             </div>
         </div>
     );

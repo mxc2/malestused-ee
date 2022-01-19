@@ -14,6 +14,11 @@ import MyAccount from './pages/MyAccount'
 
 function App() {
   const [user, setUser] = useState();
+
+  function Logout(){
+    setUser(null);
+  }
+
   return (
     <Router history={History}>
       <Header user={user} />
@@ -36,7 +41,7 @@ function App() {
             <Testingupload/>
           </Route>
           <Route path="/my-account">
-            <MyAccount user={user} />
+            <MyAccount funcLogOut={Logout} user={user} />
           </Route>
         </div>
         <Footer />

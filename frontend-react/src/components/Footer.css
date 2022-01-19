@@ -20,10 +20,10 @@
 .footer-button{
     border: 0px;
     text-align: start;
-    padding: 8px;
     color: #a3a3a3;
     font-weight: 200;
     font-size: medium;
+    margin-right: 0px;
   }
 
 .footer-td{

@@ -4,7 +4,6 @@ import 'react-resizable/css/styles.css';
 import React, { Component } from 'react';
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
-import { withSize, SizeMe } from 'react-sizeme'
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -72,4 +71,4 @@ class Selfdesign extends Component{
     }
 }
 
-export default withSize({ monitorHeight: true })(Selfdesign);
+export default Selfdesign;

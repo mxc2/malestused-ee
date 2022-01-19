@@ -1,11 +1,6 @@
 const Order = require('../models/CollageOrder')
 
-
-exports.getOrder = async (req, res) => {
-
-  res.status(200).send("order")
-}
-
+//Creating an order
 exports.createOrder = async function (req, res) {
 
   const newOrder = {
@@ -30,3 +25,27 @@ exports.createOrder = async function (req, res) {
 
   res.status(200).send(`Saved ${createdOrder}`)
 };
+
+exports.getOrder = (req,res)=>{ 
+
+  Order.find() 
+.then(result=>{ 
+console.log('result: ',result) 
+res.send(result.length>0?result:'No data'); 
+}) 
+.catch(err=>{ 
+console.log(err); 
+}) 
+} 
+
+exports.show = (req,res)=>{ 
+
+  Order.find({'email':req.params.email})
+.then(result=>{ 
+console.log('result: ',result) 
+res.send(result.length>0?result:'No data'); 
+}) 
+.catch(err=>{ 
+console.log(err); 
+}) 
+} 

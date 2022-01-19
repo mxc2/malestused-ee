@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./Changename.css"
+import "./changename.css"
 
 export default function Changename(props){
     const firstnameInputRef = useRef();

@@ -21,6 +21,7 @@ function Navbar(props){
 
     //CART
     function CartToggleOn(){
+        
         //Delete previous array
         products.splice(0, 20);
 
@@ -57,6 +58,25 @@ function Navbar(props){
         if (document.getElementById('bottom-button') ){
             document.getElementById('bottom-button').style.marginRight = "-50%";
         }
+    }
+
+    
+    function deleteProduct(data){
+        console.log("DeleteProduct RUnning")
+        //Delete previous array
+        products.splice(0, 20);
+
+        //Read products from local storage and push them to array
+        for (var i = 0; i < 20; i++) {
+            const Item = "Product" + i;
+            const output = JSON.parse(localStorage.getItem(Item));
+
+            if(output !== null){
+                products.push(output);
+            }
+        }
+
+        forceUpdate();
     }
 
     //Redirect to kollaažid
@@ -123,7 +143,7 @@ function Navbar(props){
                 {ItemInCart && 
                 <div>
                     <div id="cart-item">
-                        <CartItems items={products}/>
+                        <CartItems items={products} funcDelete={deleteProduct}/>
                     </div>
                     
                     <hr style={{margin: "0px", border: "1px solid white"}} />

@@ -16,13 +16,14 @@ export default class DesignService extends Component {
           ID: null,
           selectedCollageID: this.props.SelfDesignSelectedCollage.id,
           title: this.props.SelfDesignSelectedCollage.title,
-          selectedCollage: props.SelectedProduct,
           imgCollection: '',
           collageDescription: '',
           summary: null,
           Selectvalue: "A4",
           frame: "Puudub",
           framePrice: 0,
+          transCo: "DPD Test",
+          parcelAddress: "Männi Test",
           selectionPrice: this.props.SelfDesignSelectedCollage.price,
           error: null
         }
@@ -123,7 +124,7 @@ export default class DesignService extends Component {
         return(
             <div>
                 <FadeIn>
-                <div className="left-designservice" style={{width: "45%", display: "block", marginRight: "auto", marginTop: "64px", marginLeft: "96px"}}>
+                <div className="left-designservice">
                     <DesignServicePicture SelectedProduct={this.props.SelectedProduct}/>
                 </div>
 

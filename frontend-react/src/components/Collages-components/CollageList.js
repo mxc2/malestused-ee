@@ -6,6 +6,7 @@ function CollageList(props) {
   return(<div className="grid">
     {props.collages.map(collage=> (
      <Collage 
+      key={collage.id}
       img={collage.img}
       title={collage.title}
       price={collage.price}

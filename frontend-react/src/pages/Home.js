@@ -2,7 +2,7 @@ import './Home.css'
 import React from 'react';
 import Hero from '../components/Hero';
 import InfoList from '../components/InfoList';
-import Reviews from '../home-components/Reviews';
+import Reviews from '../components/home-components/Reviews';
 import HeartInMiddleCollage from "../images/with-background/BlackFrameBackground.png"
 import ClassicCollageBlackFrame from "../images/with-background/ClassicPhotoWIthBac.png"
 import JustAnImage from "../images/JustAnImage.jpg"

@@ -22,8 +22,6 @@ function CollagesCatalog(){
         {img: ClassicCollageBlackFrame, title: "Klassikaline kollaaž", price: 2.99, A3price: 5.99, id: 3, test: selectedProduct},
     ];
 
-    console.log(CollageStyles[selectedProduct-1]);
-
     //Getting the selected product ID
     const setSelected=(data)=>{
         setSelectedProduct(data);

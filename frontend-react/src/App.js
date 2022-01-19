@@ -31,7 +31,7 @@ function App() {
             <CollagesCatalog/>
           </Route>
           <Route path="/tellimus">
-            <Checkout/>
+            <Checkout user={user}/>
           </Route>
 		      <Route exact path="/register" component={Registration} />
           <Route exact path="/login">

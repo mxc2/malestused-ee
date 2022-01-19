@@ -24,11 +24,16 @@
 /* DesignService */
 .left-designservice{
     float: left;
+    display: block;
+    width: 45%;
+    margin-right: auto;
+    margin-top: 64px;
+    margin-left: 96px
 }
 
 .right-designservice{
     float: right;
-    width: 50%;
+    width: 45%;
     padding-bottom: 20px;
     border-left-style: solid;
     border-left-width: 1px;

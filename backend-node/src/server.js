@@ -4,7 +4,9 @@ let bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000 
 var cors = require('cors');
 const jwtAuth = require("./middleware/jwtAuth")
-require("dotenv").config()
+const dotenv = require('dotenv');
+dotenv.config({ path: 'backend-node\.env' });
+
 
 
 const imageRoutes = require('./routes/image.route')
@@ -15,6 +17,12 @@ const dpdRoute = require('./routes/dpd')
 const itellaRoute = require('./routes/itella')
 const omnivaRoute = require('./routes/omniva')
 
+
+// const app = express()
+
+// app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
+
 const app = express()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -22,9 +30,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors())
 
-app.use(express.json());
 
-
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.use('/public', express.static('public'));
 
@@ -40,9 +49,6 @@ app.use('/service', dpdRoute);
 app.use('/service', itellaRoute);
 app.use('/service', omnivaRoute);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.get('/secret', jwtAuth, (req, res) => {
   res.send('Secret Hello World!')
@@ -59,16 +65,19 @@ app.get('*', (req, res) => {
 // });
 
 
-mongoose.Promise = global.Promise
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
-  })
-  .catch((err) => {
-    console.log(err)
-    process.exit(1)
-  })
+    .connect("mongodb://root:root@mongo/malestused?authSource=admin", {
+      // .connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => {
+        app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
+    })
+    .catch((err) => {
+        console.log(err)
+        process.exit(1)
+    })
+    console.log(process.env.MONGODB_URI);
+
+  module.exports = app;

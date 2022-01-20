@@ -31,7 +31,17 @@ Peale tellimuse eest maksmist:
 ## Installimine
 
 ```sh
-tba
+
+Repo kloonimine> https://github.com/rakenduste-programmeerimine-2021/malestused-ee.git
+
+cd malestused/local-dev kausta
+
+docker-compose run --rm --no-deps backend-node install
+docker-compose run --rm --no-deps frontend-react install
+
+docker-compose up -d
+
+Mongodbs tegema 3 collectionit: itellas, omnivas, dpds ning backend-node/csvFiles kasutast sisestama vastavad vsc fileid
 ```
 
    [React]: https://reactjs.org/

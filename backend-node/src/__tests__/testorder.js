@@ -20,7 +20,7 @@ describe('Get order by email', () => {
   it('/api/order/orders/email should return orders made from email', (done) => {
       const email = "123asda123"
       request
-      .get('/api/order/orders/${email}')
+      .get('/api/order/orders/:${email}')
       .set('Content-Type', 'application/json')
       .expect(200)
 

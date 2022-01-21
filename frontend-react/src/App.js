@@ -9,7 +9,6 @@ import Checkout from './pages/Checkout'
 import Registration from './components/Account/Registration'
 import { useState } from 'react'
 import Login from './components/Account/Login'
-import Testingupload from "./components/file-upload"
 import MyAccount from './pages/MyAccount'
 
 function App() {
@@ -36,9 +35,6 @@ function App() {
 		      <Route exact path="/register" component={Registration} />
           <Route exact path="/login">
             <Login setUser={setUser} user={user} />
-          </Route>
-          <Route path="/test">
-            <Testingupload/>
           </Route>
           <Route path="/my-account">
             <MyAccount funcLogOut={Logout} user={user} />

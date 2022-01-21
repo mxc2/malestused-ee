@@ -1,15 +1,14 @@
 import "./Header.css"
+import { useState, useReducer } from "react";
 import { Link } from "react-router-dom"
 import Logo from "../LogoTest.PNG"
 import Cross from "../images/icons/cross.svg"
 import History from "./History"
 import CartItems from "./CartItems"
+import MenuButton from "../images/icons/menu-button-three-horizontal-lines.png"
 import AccountIcon from "../images/icons/user.png"
 import AccountIconLoggedIn from "../images/icons/logged-in.png"
 import ShoppingCart from "../images/icons/shopping-cart.png"
-
-import { useState, useReducer } from "react";
-//import Account from "../images/icons/account.svg"
 
 function Navbar(props){
 
@@ -42,6 +41,9 @@ function Navbar(props){
             forceUpdate();
             setItemInCart(true);
         }
+
+        //Hide other overlays
+        mobileMenuClose();
 
         //Show Cart
         document.getElementById("cart-overlay").style.width = "600px";
@@ -90,37 +92,55 @@ function Navbar(props){
         CartToggleOff();
     }
 
+    function mobileMenuOpen(){
+        document.getElementById("mobileNavigation").style.height = "100%";
+    }
+
+    function mobileMenuClose(){
+        document.getElementById("mobileNavigation").style.height = "0%";
+    }
+
     return(
         <div>
             <div className="header">
                 <Link to="/">
-                    <img onClick={CartToggleOff} id="logo" src={Logo} alt="Logo" />
+                    <img onClick={RedirectToCheckout} id="logo" src={Logo} alt="Logo" />
                 </Link>
 
                 <div className="header-buttons">
-                    <Link to="/kollaažid">
-                        {/*eslint-disable-next-line*/ }
-                        <a onClick={CartToggleOff}>Kollaazid</a>
-                    </Link>
+                    {/*eslint-disable-next-line*/ }
+                    <a onClick={RedirectToCollagesCatalog}>Kollaazid</a>
 
-                    <Link to="/meist">
-                        {/*eslint-disable-next-line*/ }
-                        <a style={{marginRight: "8px"}} onClick={CartToggleOff}>Meist</a>
-                    </Link>
+                    <img id="cart-button" className="header-icon-buttons" src={ShoppingCart} alt="Ostukorv" onClick={CartToggleOn}></img>
 
-                    <img class="header-icon-buttons" src={ShoppingCart} alt="Ostukorv" onClick={CartToggleOn}></img>
-					
-                    {/*}
-					<Link to="/register">
-                        <a onClick={CartToggleOff}>Register</a>
-                    </Link>                                      
-                    {/* //Ilmselt peaks, logini voi registeri kohugi mujale panema, et müra veits vähemaks headeris  */}
                     {props.user ?
-                    <Link to="/my-account"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIconLoggedIn} alt="Konto"></img></Link>:
-                    <Link to="/login"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIcon} alt="Konto"></img></Link>
+                    <Link to="/my-account"><img className="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIconLoggedIn} alt="Konto"></img></Link>:
+                    <Link id="login-button" to="/login"><img className="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIcon} alt="Konto"></img></Link>
                     }
                     
                 </div>
+
+                <div className="header-buttons-mobile">
+                    <img src={MenuButton} onClick={mobileMenuOpen} alt="Mobile Menu Button"></img>
+                </div>
+                
+
+                {/* Menu for mobile screens */}
+                {/* Some help from: https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp*/}
+                <div id="mobileNavigation" className="overlay">
+                    <p className="closebtn" style={{cursor: "pointer"}} onClick={mobileMenuClose}>&times;</p>
+                        <div className="overlay-content">
+                            <Link to="/kollaažid">
+                                <p onClick={mobileMenuClose}>Kollaazid</p>
+                            </Link>
+                            <Link to="/">
+                                <p onClick={CartToggleOn}>Ostukorv</p>
+                            </Link>
+                            <Link to="/login">
+                                <p onClick={mobileMenuClose}>Minu konto</p>
+                            </Link>
+                        </div>
+                    </div>
                 
             </div>
 

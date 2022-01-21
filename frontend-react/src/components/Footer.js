@@ -8,7 +8,7 @@ function Footer(){
                 <tbody>
                     <tr>
                         <td className="footer-td">
-                            <Link className="footer-button" to="/">
+                        <Link className="footer-button" to="/">
                                 Koduleht
                             </Link> 
                         </td>
@@ -25,21 +25,6 @@ function Footer(){
                         <td className="footer-td">
                             <Link className="footer-button" to="/kollaažid">
                                 Kollaažid
-                            </Link> 
-                        </td>
-                        <td className="footer-td">
-                            
-                        </td>
-                        <td className="footer-td">
-                            
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td className="footer-td">
-                            <Link className="footer-button" to="/meist">
-                                Meist
                             </Link> 
                         </td>
                         <td className="footer-td  footer-button">
@@ -67,7 +52,7 @@ function Footer(){
                 </tbody>
             </table>
 
-            <p style={{marginTop: "48px", textAlign: "center", color: "#a3a3a3"}}>Marcus-Indrek Simmer and Margen Peterson 2022</p>
+            <p id="footer-authors" style={{marginTop: "48px", textAlign: "center", color: "#a3a3a3"}}>Marcus-Indrek Simmer and Margen Peterson 2022</p>
         </div>
     );
 }

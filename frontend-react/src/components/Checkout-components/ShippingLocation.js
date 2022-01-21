@@ -70,7 +70,7 @@ function ShippingLocation(props){
                         value={value}
                         onChange={setValue}
                         getOptionLabel={(location) => location.Address}
-                        getOptionValue={(location) => location._id} // It should be unique value in the options. E.g. ID
+                        getOptionValue={(location) => location._id}
                     />
                 </div>
             </div>

@@ -16,15 +16,23 @@ function Info(props){
     }
 
     return(
-        <div className="info-content">
-            <div className="row">
-                <div>
-                    <img className={image} src={props.img} alt="Describing text"></img>
+        <div>
+            <div className="info-content">
+                <div className="row">
+                    <div>
+                        <img id="describing-image" className={image} src={props.img} alt="Describing text"></img>
+                    </div>
+                    <div className={text}>
+                        <h2 style={{textAlign: "center"}}>{props.header}</h2>
+                        <p>{props.text}</p>
+                    </div>
                 </div>
-                <div className={text}>
-                    <h2 style={{textAlign: "center"}}>{props.header}</h2>
-                    <p>{props.text}</p>
-                </div>
+            </div>
+
+            <div className="info-content-mobile">
+                <h2 style={{textAlign: "center"}}>{props.header}</h2>
+                <img id="describing-image" className="image-mobile" src={props.img} alt="Describing text"></img>
+                <p className="text-mobile">{props.text}</p>
             </div>
         </div>
     )

@@ -39,6 +39,21 @@
     border-left-width: 1px;
 }
 
+.summary{
+    text-align: center;
+}
+
+#price{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#price-underline{
+    width: 30%;
+    height: 2px;
+    color: black;
+}
+
 /* Product details */
 #header{
     text-align: center;
@@ -118,6 +133,8 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+
   
 /* Card where all the product attributes are located at product list */
 .card {
@@ -134,4 +151,27 @@
 .back-button{
     margin-left: 5%;
     margin-top: 100px;
+}
+
+@media only screen and (max-width: 1205px) {
+    .left-designservice{
+        float: none;
+        display: block;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 32px;
+        
+    }
+
+    .right-designservice{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        float: none;
+    }
+
+    .products-container{
+        object-fit: cover;
+    }
 }

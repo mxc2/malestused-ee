@@ -4,7 +4,6 @@ import HeartInMiddleCollage from "../images/Collages-catalog/BlackPicFrameWithHe
 import ClassicCollageBlackFrame from "../images/Collages-catalog/BlackFrameClassic.png"
 import HeartShapedCollage from "../images/Collages-catalog/NewDesign.png"
 import CollageList from '../components/Collages-components/CollageList';
-import SelfDesign from "../components/Self-design-components/SelfDesign";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import { If, Else } from 'react-if';
 import DesignService from "../components/Design-service/DesignService"
@@ -24,23 +23,15 @@ function CollagesCatalog(){
 
     //Getting the selected product ID
     const setSelected=(data)=>{
+        console.log(data);
         setSelectedProduct(data);
-        document.getElementById("center-button").style.display = "flex";
-    }
-
-    //Once pressing "Edasi" button, get the selected collage id and show iseteenindus valikut kui collage = 3
-    function funcContinue(){
-        if(selectedProduct){
-            if(selectedProduct !== 3){
-                setKujundusteenus(true);
-                setIseKujundus(false);
-                setContinue(false);
-            }else{
-                setContinue(true);
-            }
-            
+        
+        if(data !== 3){
+            setKujundusteenus(true);
+            setIseKujundus(false);
+            setContinue(false);
         }else{
-            console.log("Please add code to if not selected");
+            setContinue(true);
         }
     }
 
@@ -86,8 +77,6 @@ function CollagesCatalog(){
                 <div>
                     <button id="navigation-button" style={{marginLeft: "64px", marginTop: "16px"}} onClick={funcBackFromContinue}>&larr; Tagasi</button>
                     <FadeIn>
-                        {/* Give SelfDesign the right collage style */}
-                        <SelfDesign SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]}/>
                     </FadeIn>
                 </div>
         
@@ -133,10 +122,6 @@ function CollagesCatalog(){
                         <p id="description">Et alustada tellimust palun valige üks kollaaži stiil.</p>
                         
                         <CollageList collages={CollageStyles} selectedCollage={selectedProduct} funcSelect={setSelected}/>
-                        
-                        <div id="center-button">
-                            <button id="button" onClick={funcContinue}>Alusta tellimusega</button>
-                        </div>
                     </FadeIn>
                 </div>
             }

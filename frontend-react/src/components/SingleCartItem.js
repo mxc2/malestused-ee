@@ -1,4 +1,3 @@
-import "./Cart";
 import "./Cart.css";
 import "../pages/Checkout.css"
 import TrashIcon from "../images/icons/remove-cross.svg";
@@ -49,7 +48,9 @@ function SingleCartItem(props){
                     break;
                 }
             }
-            catch(err){}         
+            catch(err){
+                console.log(err);
+            }         
         }
     }
 
@@ -71,7 +72,7 @@ function SingleCartItem(props){
                     <div>
                         <p id="cart-size">Suurus: {props.size}</p>
                         <p>Raam: {props.frame}</p>
-                        <h3>{props.summary}€</h3>
+                        <h3 id="collage-total">{props.summary}€</h3>
                     </div>
                 </div>
 
@@ -100,22 +101,26 @@ function SingleCartItem(props){
 
             {props.dataFrom &&
             <table className="checkout-table">
-                <tr>
-                    <th>Pilt</th>
-                    <th>Nimi</th>
-                    <th>Suurus</th>
-                    <th>Raam</th>
-                    <th>Hind</th>
-                    <th>Valikud:</th>
-                </tr>
-                <tr>
-                    <td style={{width: "10%"}}><img style={{width: "100%"}} src={collagePicture} alt="Kollaažist pilt"></img></td>
-                    <td style={{maxWidth: "64px"}}>{props.title}</td>
-                    <td>{props.size}</td>
-                    <td>{props.frame}</td>
-                    <td>{props.summary}€</td>
-                    <td style={{width: "20px", cursor: "pointer"}}><p onClick={DeleteCartItem}>Eemalda</p></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <th>Pilt</th>
+                        <th>Nimi</th>
+                        <th>Suurus</th>
+                        <th>Raam</th>
+                        <th>Hind</th>
+                        <th>Valikud:</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td className="checkout-table-image"><img style={{width: "100%"}} src={collagePicture} alt="Kollaažist pilt"></img></td>
+                        <td className="checkout-table-title">{props.title}</td>
+                        <td>{props.size}</td>
+                        <td>{props.frame}</td>
+                        <td id="collage-total">{props.summary}€</td>
+                        <td style={{width: "20px", color: "red"}}><p style={{ cursor: "pointer"}} onClick={DeleteCartItem}>Eemalda</p></td>
+                    </tr>
+                </tbody>
               </table>
             }
         </div>

@@ -1,5 +1,6 @@
 import './MyAccount.css'
 import History from "../components/History"
+import { useEffect } from 'react';
 
 function MyAccount(props){     
 
@@ -11,6 +12,16 @@ function MyAccount(props){
         props.funcLogOut();
         History.push('/login');
     }
+
+    useEffect(() => {
+        if(props.user){
+            fetch('http://localhost:8081/api/order/orders/' + props.user.email).then(res => {
+                return res.json();
+            }).then((data) => {
+                console.log(data);
+            });
+        }
+      });
     
     return(
         <div>

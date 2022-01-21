@@ -43,6 +43,10 @@ export default function Login({setUser}, props){
       }
     }
 
+    function sendToRegistration(){
+      History.push('/register')
+    }
+
     return(
       
       <div>
@@ -53,17 +57,16 @@ export default function Login({setUser}, props){
           <h1 style={{marginBottom: "16px"}}>Logimine</h1>
 
 
-          <label for="email">Email:</label>
+          <label htmlFor="email">Email:</label>
           <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
 
-          <label for="password">Parool:</label>
+          <label htmlFor="password">Parool:</label>
           <input id="password" type="password" onChange={e => setPassword(e.target.value)} />
           <p style={{marginTop: "16px", marginBottom: "16px", color: "red"}}>{error}</p>
 
-          <button id="button" style={{marginLeft: "auto", width: "50%"}} onClick={onFinish}>Logi Sisse</button>
+          <button id="button" style={{marginLeft: "0px"}} onClick={onFinish}>Logi Sisse</button>
 
-          <p>Või</p>
-
+          <p style={{marginTop: "16px", cursor: "pointer", color: "blue"}} onClick={sendToRegistration}>Pole kontot? Vajuta siia</p>
       </div>
     </div>
   );

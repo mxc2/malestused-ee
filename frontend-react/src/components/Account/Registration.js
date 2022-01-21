@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Input, Button } from "antd";
+import History from "../History";
 import "../../App.css"
 
 function Registration(){
@@ -25,6 +25,7 @@ function Registration(){
 
 
   const onFinish = async e => {
+    if(email && password && firstName && lastName){
       if(confirmPassword === password){
         const registered = await registerUser({ 
           firstName,
@@ -35,7 +36,8 @@ function Registration(){
         if(registered.error) {
           setError(registered.error)
         }else if(registered.message){
-          setError("User registered!")
+          setError("Konto loodud!")
+          History.push('/my-account');
           
         } else {
           setError(registered.msg['0'].msg)
@@ -43,65 +45,40 @@ function Registration(){
       } else {
         setError("Passwords don't match!")
       }
-      
-    };
+    }else{
+      setError("Kõik väljad pole täidetud!")
+    }
+  }
     
 
     return(
-      <Form
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 12 }}
-        layout="horizontal"
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        autoComplete="off"
-        >
-        <div style={{textAlign: "center", color:"brown"}}>{error}</div>
-        <Form.Item
-        label="First Name"
-        name="firstName"
-        rules={[{ required: true, message: 'Please input your first name!' }]}
-        onChange={e => setFirstName(e.target.value)}
-        >
-        <Input />
-        </Form.Item>
-        <Form.Item
-        label="Last Name"
-        name="lastName"
-        rules={[{ required: true, message: 'Please input your last name!' }]}
-        >
-        <Input onChange={e => setLastName(e.target.value)} />
-        </Form.Item>
-        <Form.Item
-        label="Email"
-        name="email"
-        rules={[{ required: true, message: 'Please input your email!' }]}
-        >
-        <Input onChange={e => setEmail(e.target.value)} type = "email" />
-        </Form.Item>
+      <div>
+        <hr />
 
-        <Form.Item
-        label="Password"
-        name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
-        >
-        <Input.Password onChange={e => setPassword(e.target.value)} />
-        </Form.Item>
-        <Form.Item
-        label="Confirm password"
-        name="confirmPassword"
-        rules={[{ required: true, message: 'Please input your password!' }]}
-      >
-        <Input.Password onChange={e => setConfirmPassword(e.target.value)} />
-      </Form.Item>
+        <div className="form-body">
 
+          <h1 style={{ marginBottom: "16px" }}>Registeerimine</h1>
 
-      <Form.Item wrapperCol={{ offset: 12, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Register
-        </Button>
-      </Form.Item>
-    </Form>
+          <label for="first-name">Esinimi:</label>
+          <input id="first-name" type="text" onChange={e => setFirstName(e.target.value)} />
+
+          <label for="last-name">Perekonna nimi:</label>
+          <input id="last-name" type="text" onChange={e => setLastName(e.target.value)} />
+
+          <label for="email">Email:</label>
+          <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
+
+          <label for="password">Parool:</label>
+          <input id="password" type="password" onChange={e => setPassword(e.target.value)} />
+
+          <label for="password">Kinnitage parool:</label>
+          <input id="password" type="password" onChange={e => setConfirmPassword(e.target.value)} />
+
+          <p style={{ marginTop: "16px", marginBottom: "16px", color: "red" }}>{error}</p>
+
+          <button id="button" style={{ marginLeft: "0px" }} onClick={onFinish}>Logi Sisse</button>
+        </div>
+      </div>
   );
 }
 

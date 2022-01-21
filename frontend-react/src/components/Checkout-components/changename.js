@@ -20,7 +20,7 @@ export default function Changename(props){
             <h3 style={{textAlign: "center", paddingBottom: "12px"}}>Tellija andmed:</h3>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="first-name">Eesnimi:</label>
+                    <label id="first-name-label" for="first-name">Eesnimi:</label>
                 </div>
                 <div className="col-75">
                     <input type="text" id="first-name" onChange={formSubmitHandler} ref={firstnameInputRef}></input>
@@ -28,7 +28,7 @@ export default function Changename(props){
             </div>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="last-name">Perekonna nimi:</label>
+                    <label id="last-name-label" for="last-name">Perekonna nimi:</label>
                 </div>
                 <div className="col-75">
                     <input type="text" id="last-name" onChange={formSubmitHandler} ref={surnameInputRef}></input>
@@ -36,7 +36,7 @@ export default function Changename(props){
             </div>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="email">Email:</label>
+                    <label id="email-label" for="email">Email:</label>
                 </div>
                 <div className="col-75">
                     <input type="text" id="email" onChange={formSubmitHandler} ref={emailInputRef}></input>
@@ -44,7 +44,7 @@ export default function Changename(props){
             </div>
             <div className="row-input">
                 <div className="col-25">
-                    <label for="phone">Telefon:</label>
+                    <label id="last-name-label" for="phone">Telefon:</label>
                 </div>
                 <div className="col-75">
                     <input type="text" id="phone" onChange={formSubmitHandler} ref={phoneInputRef}></input>

@@ -1,22 +1,32 @@
 import React from "react";
-import {render, fireEvent} from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Changename from "./Changename";
+import "@testing-library/jest-dom/extend-expect"
 
-it("renders correctly", ()=>{
-    const {queryByPlaceholderText} = render( <Changename></Changename>)
+test("Firstname starts null", () => {
+    const { getByTestId } = render(<Changename></Changename>);
+    const firstName = getByTestId("first-name");
 
-    expect(queryByPlaceholderText("Search")).toBeTruthy()
+    expect(firstName.textContent).toBe(undefined);
 })
 
-describe("Input value", () => {
-    it("updates on change", () => {
+test("Lastname starts null", () => {
+    const { getByTestId } = render(<Changename></Changename>);
+    const lastName = getByTestId("last-name");
 
-    const {queryByPlaceholderText} = render()
+    expect(lastName.textContent).toBe(undefined);
+})
 
-    const searchInput = queryByPlaceholderText('Eesnimi');
+test("Email starts null", () => {
+    const { getByTestId } = render(<Changename></Changename>);
+    const email = getByTestId("email");
 
-    fireEvent.change( searchInput, {target: {value: "test"}}),
+    expect(email.textContent).toBe(undefined);
+})
 
-    expect(searchInput.value).toBe("test")
-    })
+test("Phone starts null", () => {
+    const { getByTestId } = render(<Changename></Changename>);
+    const phone = getByTestId("phone");
+
+    expect(phone.textContent).toBe(undefined);
 })

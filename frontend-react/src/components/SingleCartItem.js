@@ -72,7 +72,7 @@ function SingleCartItem(props){
                     <div>
                         <p id="cart-size">Suurus: {props.size}</p>
                         <p>Raam: {props.frame}</p>
-                        <h3>{props.summary}€</h3>
+                        <h3 id="collage-total">{props.summary}€</h3>
                     </div>
                 </div>
 
@@ -117,7 +117,7 @@ function SingleCartItem(props){
                         <td className="checkout-table-title">{props.title}</td>
                         <td>{props.size}</td>
                         <td>{props.frame}</td>
-                        <td>{props.summary}€</td>
+                        <td id="collage-total">{props.summary}€</td>
                         <td style={{width: "20px", color: "red"}}><p style={{ cursor: "pointer"}} onClick={DeleteCartItem}>Eemalda</p></td>
                     </tr>
                 </tbody>

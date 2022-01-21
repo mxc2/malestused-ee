@@ -4,7 +4,6 @@ import HeartInMiddleCollage from "../images/Collages-catalog/BlackPicFrameWithHe
 import ClassicCollageBlackFrame from "../images/Collages-catalog/BlackFrameClassic.png"
 import HeartShapedCollage from "../images/Collages-catalog/NewDesign.png"
 import CollageList from '../components/Collages-components/CollageList';
-import SelfDesign from "../components/Self-design-components/SelfDesign";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import { If, Else } from 'react-if';
 import DesignService from "../components/Design-service/DesignService"
@@ -78,8 +77,6 @@ function CollagesCatalog(){
                 <div>
                     <button id="navigation-button" style={{marginLeft: "64px", marginTop: "16px"}} onClick={funcBackFromContinue}>&larr; Tagasi</button>
                     <FadeIn>
-                        {/* Give SelfDesign the right collage style */}
-                        <SelfDesign SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]}/>
                     </FadeIn>
                 </div>
         

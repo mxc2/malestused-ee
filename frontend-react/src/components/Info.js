@@ -20,7 +20,7 @@ function Info(props){
             <div className="info-content">
                 <div className="row">
                     <div>
-                        <img className={image} src={props.img} alt="Describing text"></img>
+                        <img id="describing-image" className={image} src={props.img} alt="Describing text"></img>
                     </div>
                     <div className={text}>
                         <h2 style={{textAlign: "center"}}>{props.header}</h2>
@@ -31,7 +31,7 @@ function Info(props){
 
             <div className="info-content-mobile">
                 <h2 style={{textAlign: "center"}}>{props.header}</h2>
-                <img className="image-mobile" src={props.img} alt="Describing text"></img>
+                <img id="describing-image" className="image-mobile" src={props.img} alt="Describing text"></img>
                 <p className="text-mobile">{props.text}</p>
             </div>
         </div>

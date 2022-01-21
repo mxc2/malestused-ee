@@ -104,25 +104,18 @@ function Navbar(props){
         <div>
             <div className="header">
                 <Link to="/">
-                    <img onClick={CartToggleOff} id="logo" src={Logo} alt="Logo" />
+                    <img onClick={RedirectToCheckout} id="logo" src={Logo} alt="Logo" />
                 </Link>
 
                 <div className="header-buttons">
-                    <Link to="/kollaažid">
-                        {/*eslint-disable-next-line*/ }
-                        <a onClick={CartToggleOff}>Kollaazid</a>
-                    </Link>
+                    {/*eslint-disable-next-line*/ }
+                    <a onClick={RedirectToCollagesCatalog}>Kollaazid</a>
 
-                    <Link to="/meist">
-                        {/*eslint-disable-next-line*/ }
-                        <a style={{marginRight: "8px"}} onClick={CartToggleOff}>Meist</a>
-                    </Link>
-
-                    <img class="header-icon-buttons" src={ShoppingCart} alt="Ostukorv" onClick={CartToggleOn}></img>
+                    <img id="cart-button" className="header-icon-buttons" src={ShoppingCart} alt="Ostukorv" onClick={CartToggleOn}></img>
 
                     {props.user ?
-                    <Link to="/my-account"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIconLoggedIn} alt="Konto"></img></Link>:
-                    <Link to="/login"><img class="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIcon} alt="Konto"></img></Link>
+                    <Link to="/my-account"><img className="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIconLoggedIn} alt="Konto"></img></Link>:
+                    <Link id="login-button" to="/login"><img className="header-icon-buttons" style={{marginLeft: "8px"}} src={AccountIcon} alt="Konto"></img></Link>
                     }
                     
                 </div>
@@ -134,16 +127,13 @@ function Navbar(props){
 
                 {/* Menu for mobile screens */}
                 {/* Some help from: https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp*/}
-                <div id="mobileNavigation" class="overlay">
-                    <p class="closebtn" style={{cursor: "pointer"}} onClick={mobileMenuClose}>&times;</p>
-                        <div class="overlay-content">
+                <div id="mobileNavigation" className="overlay">
+                    <p className="closebtn" style={{cursor: "pointer"}} onClick={mobileMenuClose}>&times;</p>
+                        <div className="overlay-content">
                             <Link to="/kollaažid">
                                 <p onClick={mobileMenuClose}>Kollaazid</p>
                             </Link>
-                            <Link to="/meist">
-                                <p onClick={mobileMenuClose}>Meist</p>
-                            </Link>
-                            <Link>
+                            <Link to="/">
                                 <p onClick={CartToggleOn}>Ostukorv</p>
                             </Link>
                             <Link to="/login">

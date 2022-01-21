@@ -45,8 +45,8 @@ function Checkout(){
         const length = products.length;
         sum = 0;
 
-        for (var i = 0; i < length; i++){
-            sum = sum + products[i].summary;
+        for (var m = 0; m < length; m++){
+            sum = sum + products[m].summary;
         }
     }
 
@@ -63,8 +63,8 @@ function Checkout(){
         products.splice(0, 20);
 
         //Read products from local storage and push them to array
-        for (var i = 0; i < 20; i++) {
-            const Item = "Product" + i;
+        for (var n = 0; n < 20; n++) {
+            const Item = "Product" + n;
             const output = JSON.parse(localStorage.getItem(Item));
 
             if(output !== null){
@@ -88,8 +88,8 @@ function Checkout(){
                     var customerName = details.firstname + " " + details.surname;
 
                     //Send to Backend
-                    axios.post("http://localhost:8081/api/order/create", mergedObj, {
-                    }).then(() => {
+                    axios.post("http://localhost:8081/api/order/create", mergedObj, { /*eslint-disable-next-line*/
+                    }).then(() => { 
                         if(AlreadySent !== 1){
                             //Send emails, the if checks that we do this only once
                             emailjs.send("service_evuad0h","template_2fa2tzz",{
@@ -134,8 +134,8 @@ function Checkout(){
                             <th>Summa:</th>
                         </tr>
                         <tr>
-                            <th>Mälestused.ee või Marcus-Indrek Simmer</th>
-                            <th>EE467700771005735625</th>
+                            <th id="account-name">Mälestused.ee või Marcus-Indrek Simmer</th>
+                            <th id="iBAN-number">EE467700771005735625</th>
                             <th>{today.getMonth() + "" + today.getDate() + "" + today.getHours() + today.getMinutes()}</th>
                             <th>{parseFloat(Price).toFixed(2)}€</th>
                         </tr>

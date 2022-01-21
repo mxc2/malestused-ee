@@ -15,7 +15,7 @@ function MyAccount(props){
 
     useEffect(() => {
         if(props.user){
-            fetch('localhost:8081/api/order/orders/' + props.user.email).then(res => {
+            fetch('http://localhost:8081/api/order/orders/' + props.user.email).then(res => {
                 return res.json();
             }).then((data) => {
                 console.log(data);

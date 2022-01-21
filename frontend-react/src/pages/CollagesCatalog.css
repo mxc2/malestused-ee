@@ -39,6 +39,21 @@
     border-left-width: 1px;
 }
 
+.summary{
+    text-align: center;
+}
+
+#price{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#price-underline{
+    width: 30%;
+    height: 2px;
+    color: black;
+}
+
 /* Product details */
 #header{
     text-align: center;
@@ -118,6 +133,8 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+
   
 /* Card where all the product attributes are located at product list */
 .card {

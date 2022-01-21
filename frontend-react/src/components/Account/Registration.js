@@ -19,7 +19,6 @@ function Registration(){
       body: JSON.stringify(credentials)
     })
     const data = await response.json();
-    console.log(data)
     return data
   }
 
@@ -49,6 +48,10 @@ function Registration(){
       setError("Kõik väljad pole täidetud!")
     }
   }
+
+    function sendToLogin(){
+      History.push('/login')
+    }
     
 
     return(
@@ -59,24 +62,26 @@ function Registration(){
 
           <h1 style={{ marginBottom: "16px" }}>Registeerimine</h1>
 
-          <label for="first-name">Esinimi:</label>
+          <label htmlFor="first-name">Esinimi:</label>
           <input id="first-name" type="text" onChange={e => setFirstName(e.target.value)} />
 
-          <label for="last-name">Perekonna nimi:</label>
+          <label htmlFor="last-name">Perekonna nimi:</label>
           <input id="last-name" type="text" onChange={e => setLastName(e.target.value)} />
 
-          <label for="email">Email:</label>
+          <label htmlFor="email">Email:</label>
           <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
 
-          <label for="password">Parool:</label>
+          <label htmlFor="password">Parool:</label>
           <input id="password" type="password" onChange={e => setPassword(e.target.value)} />
 
-          <label for="password">Kinnitage parool:</label>
+          <label htmlFor="password">Kinnitage parool:</label>
           <input id="password" type="password" onChange={e => setConfirmPassword(e.target.value)} />
 
           <p style={{ marginTop: "16px", marginBottom: "16px", color: "red" }}>{error}</p>
 
           <button id="button" style={{ marginLeft: "0px" }} onClick={onFinish}>Logi Sisse</button>
+        
+          <p style={{marginTop: "16px", cursor: "pointer", color: "blue"}} onClick={sendToLogin}>Või logi sisse vajutades siia.</p>
         </div>
       </div>
   );

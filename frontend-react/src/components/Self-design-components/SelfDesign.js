@@ -17,14 +17,10 @@ class Selfdesign extends Component{
             frame: 0,
             summary: "",
         }
-
-        const layout = this.generateLayout();
-        //this.state = { layout };
     }
 
     //Generate random id for collage when page loads
     componentDidMount(){
-        console.log(this.state);
         const min = 1;
         const max = 999999;
         const rand = min + Math.random() * (max - min);
@@ -74,8 +70,6 @@ class Selfdesign extends Component{
         for (var i = 0; i < 20; i++) {
             const Item = "Product" + i;
             const output = localStorage.getItem(Item);
-
-            console.log("run");
 
             if(output === null){
                 localStorage.setItem(Item, JSON.stringify(this.state));

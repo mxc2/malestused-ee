@@ -40,7 +40,6 @@ class Selfdesign extends Component{
         const p = this.props;
         return _.map(new Array(p.items), function(item, i) {
           const y = _.result(p, "y") || Math.ceil(Math.random() * 4) + 1;
-          console.log(i);
           return {
             x: (i * 2) % 12,
             y: Math.floor(i / 6) * y,

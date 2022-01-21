@@ -81,3 +81,38 @@ p{
     color: white;
     background-color: black;
 }
+
+
+.checkout-table{
+    width: 75%;
+    max-width: 1420px;
+    margin: auto;
+    text-align: left;
+}
+
+.checkout-table-title{
+    max-width: 64px;
+}
+  
+td, th {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px;
+}
+
+.checkout-table-image{
+    width: 10%;
+}
+
+@media only screen and (max-width: 1163px) {
+    .checkout-table-image{
+        width: 20%;
+    }
+
+    .checkout-table{
+        width: 95%;
+      }
+    
+      .checkout-table-title{
+        max-width: none;
+    }
+}

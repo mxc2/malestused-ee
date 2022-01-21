@@ -17,17 +17,17 @@ function CollagesCatalog(props){
             <Switch>
                 <Case condition={props.SelectedProduct === 1}>
                     <ProgressiveImage delay={400} src={HeartInMiddleCollage} placeholder={HeartInMiddleCollagePlacheHolder}>
-                        {(src) => <img style={{width: "100%", height: "100%", maxHeight: "720px", maxWidth: "720px"}} src={src} alt="Südamega kollaažist pilt" />}
+                        {(src) => <img style={{width: "100%", height: "100%", maxHeight: "720px", objectFit: "cover"}} src={src} alt="Südamega kollaažist pilt" />}
                     </ProgressiveImage>
                 </Case>
                 <Case condition={props.SelectedProduct === 2}>
                     <ProgressiveImage delay={400} src={HeartShapedCollage} placeholder={HeartShapedCollagePlaceHolder}>
-                        {(src) => <img style={{width: "100%", height: "100%", maxHeight: "720px", maxWidth: "720px"}} src={src} alt="Südame kujuline kollaažist pilt" />}
+                        {(src) => <img style={{width: "100%", height: "100%", maxHeight: "720px", objectFit: "cover"}} src={src} alt="Südame kujuline kollaažist pilt" />}
                     </ProgressiveImage>
                 </Case>
                 <Case condition={props.SelectedProduct === 3}>
                     <ProgressiveImage delay={400} src={ClassicCollage} placeholder={ClassicCollagePlaceHolder}>
-                        {(src) => <img style={{width: "100%", height: "100%", maxHeight: "720px", maxWidth: "720px"}} src={src} alt="Südamega kollaažist pilt" />}
+                        {(src) => <img style={{width: "100%", height: "100%", maxHeight: "720px", objectFit: "cover"}} src={src} alt="Südamega kollaažist pilt" />}
                     </ProgressiveImage>
                 </Case>
             </Switch> 

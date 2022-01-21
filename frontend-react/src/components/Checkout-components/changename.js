@@ -23,7 +23,7 @@ export default function Changename(props){
                     <label for="first-name">Eesnimi:</label>
                 </div>
                 <div className="col-75">
-                    <input type="text" id="first-name" onChange={formSubmitHandler} ref={firstnameInputRef}></input>
+                    <input type="text" id="first-name" placeholder="Eesnimi" onChange={formSubmitHandler} ref={firstnameInputRef}></input>
                 </div>
             </div>
             <div className="row-input">

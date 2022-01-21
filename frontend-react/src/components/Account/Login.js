@@ -60,10 +60,7 @@ export default function Login({setUser}, props){
           <input id="password" type="password" onChange={e => setPassword(e.target.value)} />
           <p style={{marginTop: "16px", marginBottom: "16px", color: "red"}}>{error}</p>
 
-          <button id="button" style={{marginLeft: "auto", width: "50%"}} onClick={onFinish}>Logi Sisse</button>
-
-          <p>Või</p>
-
+          <button id="button" onClick={onFinish}>Logi Sisse</button>
       </div>
     </div>
   );

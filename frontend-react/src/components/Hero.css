@@ -58,3 +58,40 @@
     color:rgb(255, 255, 255);
     background-color:rgb(43, 43, 43);
 }
+
+@media only screen and (max-width: 1500px) {
+    #hero-product{
+        margin-right: 5%;
+    }
+    
+  }
+
+@media only screen and (max-width: 1100px) {
+    #hero-product{
+        float: none;
+        width: auto;
+        height: 400px;
+        margin: auto;
+        display: block;
+        padding-left: 16%;
+        padding-top: 32px;
+    }
+
+    .hero-text{
+        text-align: center;
+        top: 58%;
+        left: 0px;
+        margin: auto;
+        width: 100%
+    }
+
+    .hero-image{
+        height: 775px;
+        margin-bottom: 25px;
+    }
+
+    #btn{
+        padding: 24px 48px;
+    }
+    
+  }

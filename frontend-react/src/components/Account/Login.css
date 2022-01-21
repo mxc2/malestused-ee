@@ -36,10 +36,9 @@ input[type=text], input[type=number], input[type=email], input[type=password]{
     clear: both;
   }
   
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
+  @media only screen and (max-width: 1205px) {
+    #button{
+      font-size: 24px;
+      padding: 12px 42px;
     }
-  }
+  } 

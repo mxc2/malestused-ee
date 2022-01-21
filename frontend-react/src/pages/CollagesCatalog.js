@@ -24,23 +24,15 @@ function CollagesCatalog(){
 
     //Getting the selected product ID
     const setSelected=(data)=>{
+        console.log(data);
         setSelectedProduct(data);
-        document.getElementById("center-button").style.display = "flex";
-    }
-
-    //Once pressing "Edasi" button, get the selected collage id and show iseteenindus valikut kui collage = 3
-    function funcContinue(){
-        if(selectedProduct){
-            if(selectedProduct !== 3){
-                setKujundusteenus(true);
-                setIseKujundus(false);
-                setContinue(false);
-            }else{
-                setContinue(true);
-            }
-            
+        
+        if(data !== 3){
+            setKujundusteenus(true);
+            setIseKujundus(false);
+            setContinue(false);
         }else{
-            console.log("Please add code to if not selected");
+            setContinue(true);
         }
     }
 
@@ -133,10 +125,6 @@ function CollagesCatalog(){
                         <p id="description">Et alustada tellimust palun valige üks kollaaži stiil.</p>
                         
                         <CollageList collages={CollageStyles} selectedCollage={selectedProduct} funcSelect={setSelected}/>
-                        
-                        <div id="center-button">
-                            <button id="button" onClick={funcContinue}>Alusta tellimusega</button>
-                        </div>
                     </FadeIn>
                 </div>
             }

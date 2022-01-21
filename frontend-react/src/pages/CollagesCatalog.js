@@ -5,6 +5,7 @@ import ClassicCollageBlackFrame from "../images/Collages-catalog/BlackFrameClass
 import HeartShapedCollage from "../images/Collages-catalog/NewDesign.png"
 import CollageList from '../components/Collages-components/CollageList';
 import FadeIn from "react-fade-in/lib/FadeIn";
+import SelfDesign from "../components/Self-design-components/SelfDesign.js"
 import { If, Else } from 'react-if';
 import DesignService from "../components/Design-service/DesignService"
 
@@ -14,7 +15,6 @@ function CollagesCatalog(){
     const [Kujundusteenus, setKujundusteenus] = useState(false);
     const [IseKujundus, setIseKujundus] = useState(false);
 
-    //TEMPORARY
     const CollageStyles = [
         {img: HeartInMiddleCollage, title: "Südamega kollaaž", price: 3.49, A3price: 6.99, id: 1, test: selectedProduct},
         {img: HeartShapedCollage, title: "Südame kujuline kollaaž", price: 3.49, A3price: 6.99, id: 2, test: selectedProduct},
@@ -23,7 +23,6 @@ function CollagesCatalog(){
 
     //Getting the selected product ID
     const setSelected=(data)=>{
-        console.log(data);
         setSelectedProduct(data);
         
         if(data !== 3){
@@ -77,6 +76,7 @@ function CollagesCatalog(){
                 <div>
                     <button id="navigation-button" style={{marginLeft: "64px", marginTop: "16px"}} onClick={funcBackFromContinue}>&larr; Tagasi</button>
                     <FadeIn>
+                        <SelfDesign SelfDesignSelectedCollage={CollageStyles[selectedProduct-1]}></SelfDesign>
                     </FadeIn>
                 </div>
         

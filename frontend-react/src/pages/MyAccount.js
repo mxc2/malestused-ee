@@ -1,8 +1,11 @@
 import './MyAccount.css'
 import History from "../components/History"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import AllOrders from '../components/Profile/AllOrders';
 
-function MyAccount(props){     
+function MyAccount(props){    
+    
+    const[products, setProducts] = useState([])
 
     if(!props.user){
         History.push('/login');
@@ -18,10 +21,10 @@ function MyAccount(props){
             fetch('http://localhost:8081/api/order/orders/' + props.user.email).then(res => {
                 return res.json();
             }).then((data) => {
-                console.log(data);
+                setProducts(data);
             });
         }
-      });
+      }, []);
     
     return(
         <div>
@@ -29,7 +32,11 @@ function MyAccount(props){
 
             <h1 style={{textAlign: "center"}}>Minu konto:</h1>
 
-            <button id="logout-button" onClick={logOut}>Logi välja</button>
+            <h2 style={{textAlign: "center"}}>Minu tellimused:</h2>
+
+            <AllOrders infos={products}></AllOrders>
+            
+            <button id="logout-button" style={{marginTop: "32px"}} onClick={logOut}>Logi välja</button>
         </div>
     )
 }   

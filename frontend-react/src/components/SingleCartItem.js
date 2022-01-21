@@ -32,7 +32,6 @@ function SingleCartItem(props){
     }
 
     function DeleteCartItem(){
-        console.log("Running Self-Delete");
         
         for (var i = 0; i < 20; i++) {
             const Item = "Product" + i;

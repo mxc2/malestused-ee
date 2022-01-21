@@ -4,7 +4,7 @@ const app = require("../server");
 const request = supertest(app);
 
 describe('Testing / ', () => {
-    
+    console.log(request.get('/'))
   it('/ should return Hello World! response', (done) => {
           request.get('/')
           .expect('Hello World!')

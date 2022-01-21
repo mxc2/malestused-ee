@@ -5,22 +5,26 @@ const request = supertest(app);
 
 
 describe('Testing api/order/orders ', () => {
-    
   it('api/order/orders should list created orders', (done) => {
+console.log(request.get('/api/order/orders'))
 
     request
     .get('/api/order/orders')
-    .set('Accept', 'application/json')
     .expect(200)
-    .expect((res) => {
-        expect(200)
-        console.log(res.body)
-        expect(res.body).not.toBeNull();
-        expect.arrayContaining([
-            expect.objectContaining({ID: "1"}),
-        ])
-    })
     .end(done);
 
 });
+})
+
+describe('Get order by email', () => {
+  it('/api/order/orders/email should return orders made from email', (done) => {
+      const email = "123asda123"
+      request
+      .get('/api/order/orders/:${email}')
+      .set('Content-Type', 'application/json')
+      .expect(200)
+
+      .end(done);
+  
+  });
 }) 

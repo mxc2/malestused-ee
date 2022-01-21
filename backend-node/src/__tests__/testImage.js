@@ -7,7 +7,6 @@ describe('Testing /endpoint (images) ', () => {
     
   it('/endpoint should return json img list', (done) => {
           request.get('/endpoint')
-          .expect('Hello World!')
           .end(done);
   })
 })

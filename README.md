@@ -4,7 +4,7 @@ Current authors: Marcus-Indrek Simmer
 
 Original Authors: Marcus-Indrek Simmer ja Margen Peterson
 
-Mälestused.ee is an online platform that empowers users to design personalized collages using their own photos. It is currently a work in progress by Marcus-Indrek Simmer, starting from August 2023, and is missing some crucial features. The user-friendly interface allows the user to choose from various collage styles, upload their photos, arrange them to their liking, and even opt for framing. Website will offer two convenient paths: DIY collage creation (WIP!) or expert assistance.
+Mälestused.ee is an online platform that empowers users to design personalized collages using their own photos. It is currently back at work in progress by Marcus-Indrek Simmer, starting from August 2023, and is missing some crucial features. The user-friendly interface allows the user to choose from various collage styles, upload their photos, arrange them to their liking, and even opt for framing. Website will offer two convenient paths: DIY collage creation (WIP!) or expert assistance.
 
 ## Key Features:
 
